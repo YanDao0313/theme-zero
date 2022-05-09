@@ -1,0 +1,37 @@
+.loading {
+  position: relative;
+  width: 400px;
+  height: 50px;
+  user-select: none;
+  overflow: hidden;
+}
+
+.loading img {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  filter: drop-shadow(0 -100px 0 var(--black));
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 0;
+  filter: drop-shadow(0 -100px 0 var(--white));
+  width: 100%;
+  height: 100%;
+  background: url('@/assets/images/loading.png') no-repeat left 100%;
+  background-size: cover;
+  will-change: width;
+  animation: loading 3.5s cubic-bezier(0.28, 0.11, 0.32, 1) infinite forwards;
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 400px;
+  }
+}
