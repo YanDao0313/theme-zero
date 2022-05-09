@@ -16,7 +16,7 @@ h1.heading {
 }
 
 h2.heading {
-  @apply text-2xl;a
+  @apply text-2xl;
 }
 
 h3.heading {

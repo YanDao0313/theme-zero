@@ -3,7 +3,7 @@ import { useState } from 'react'
 export const useLoading = (duration: number = 1500) => {
   const [startTime] = useState(new Date().getTime())
 
-  const delay = () =>
+  const loading = () =>
     new Promise<void>((resolve) => {
       const interval = duration - (new Date().getTime() - startTime)
       if (interval > 0) {
@@ -13,5 +13,5 @@ export const useLoading = (duration: number = 1500) => {
       }
     })
 
-  return delay
+  return loading
 }

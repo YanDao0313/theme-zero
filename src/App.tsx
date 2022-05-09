@@ -19,7 +19,7 @@ const ZeroRoutes = () => {
         addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
       >
         <Routes location={location}>
-          <Route path={'/home'} element={<Home />} />
+          <Route path={'/'} element={<Home />} />
           <Route path={'/about'} element={<About />} />
         </Routes>
       </CSSTransition>

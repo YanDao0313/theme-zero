@@ -42,4 +42,22 @@
     border-radius: 3px;
     background-color: var(--gray);
   }
+
+  /* custom page */
+  .page {
+    @apply relative w-full min-h-screen pt-12 pr-32 flex items-center;
+  }
+
+  /* page fade animation */
+  .fade {
+    animation: fade 0.8s ease-out;
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
