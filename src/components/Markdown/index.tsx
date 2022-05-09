@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm'
 import Heading from './Heading'
 import Link from './Link'
 // import Image from './Image'
-// import Code from './Code'
+import Code from './Code'
 import styles from './index.module.css'
 
 type MarkdownProps = {
@@ -37,6 +37,8 @@ const Markdown: React.FC<MarkdownProps> = ({ content }) => {
           h5: Heading,
           h6: Heading,
           a: Link,
+          code: Code,
+          pre: Code,
         }}
       />
     </div>
