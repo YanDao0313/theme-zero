@@ -1,0 +1,20 @@
+.side {
+  width: 33.333333vw;
+}
+
+.nav > a {
+  @apply cursor-pointer p-2 transform duration-300 hover:scale-110;
+}
+
+.nav-y > a {
+  @apply hover:translate-x-1;
+}
+
+.nav-x > a {
+  @apply hover:-translate-y-1;
+}
+
+.title,
+.subtitle {
+  font-family: GuDianMingChaoTi;
+}
