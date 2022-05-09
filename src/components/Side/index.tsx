@@ -30,7 +30,7 @@ const Side: React.FC<SideProps> = () => {
       {/* side menu */}
       <div className="w-full h-2/3 flex justify-end pb-10">
         <nav className="nav nav-y flex flex-col justify-end items-center w-12">
-          <Link to="/home">
+          <Link to="/">
             <Villa />
           </Link>
           <Link to="/archive">

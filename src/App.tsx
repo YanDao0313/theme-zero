@@ -6,6 +6,7 @@ import Side from '@components/Side'
 import Cloud from '@components/Cloud'
 import Home from '@/pages/Home'
 import About from '@/pages/About'
+import Post from '@/pages/Post'
 
 const ZeroRoutes = () => {
   const location = useLocation()
@@ -21,6 +22,7 @@ const ZeroRoutes = () => {
         <Routes location={location}>
           <Route path={'/'} element={<Home />} />
           <Route path={'/about'} element={<About />} />
+          <Route path={'/post/:num'} element={<Post />} />
         </Routes>
       </CSSTransition>
     </SwitchTransition>
