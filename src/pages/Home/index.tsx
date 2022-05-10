@@ -132,7 +132,9 @@ const Home: React.FC<HomeProps> = () => {
                     {issue.milestone ? issue.milestone.title : '未分类'}
                     <Tag className="ml-4 mr-0.5" />
                     {issue.labels.map((label) => (
-                      <span key={label.id}>{label.name}</span>
+                      <span className="mr-2" key={label.id}>
+                        {label.name}
+                      </span>
                     ))}
                   </div>
                 </article>

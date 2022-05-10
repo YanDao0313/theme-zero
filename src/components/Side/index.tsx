@@ -16,9 +16,11 @@ import {
   Telegram,
   Mail,
   Music,
-  Send,
   Butterfly,
 } from '@components/Icons'
+import config from '@/config'
+
+const { github, twitter, telegram, email, music } = config.contact
 
 type SideProps = {}
 
@@ -60,27 +62,24 @@ const Side: React.FC<SideProps> = () => {
       <div className="flex justify-end py-12">
         <Butterfly />
         <div className="nav nav-x flex items-center w-2/3 h-12 ">
-          <Link to="/">
+          <a href={github} rel="noopener noreferrer" target="_blank">
             <Github />
-          </Link>
-          <Link to="/">
+          </a>
+          <a href={twitter} rel="noopener noreferrer" target="_blank">
             <Twitter />
-          </Link>
-          <Link to="/">
+          </a>
+          <a href={telegram} rel="noopener noreferrer" target="_blank">
             <Telegram />
-          </Link>
-          <Link to="/">
+          </a>
+          <a href={email} rel="noopener noreferrer" target="_blank">
             <Mail />
-          </Link>
-          <Link to="/">
-            <Moon />
-          </Link>
-          <Link to="/">
+          </a>
+          <a href={music} rel="noopener noreferrer" target="_blank">
             <Music />
-          </Link>
-          <Link to="/">
-            <Send />
-          </Link>
+          </a>
+          <a href={github} rel="noopener noreferrer" target="_blank">
+            <Moon />
+          </a>
         </div>
       </div>
     </div>

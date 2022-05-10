@@ -4,6 +4,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import './App.css'
 import Side from '@components/Side'
 import Cloud from '@components/Cloud'
+import Action from '@components/Action'
 import Home from '@/pages/Home'
 import About from '@/pages/About'
 import Post from '@/pages/Post'
@@ -33,6 +34,7 @@ const App = () => {
   return (
     <div className="app">
       <Cloud />
+      <Action />
       <Side />
       <ZeroRoutes />
     </div>

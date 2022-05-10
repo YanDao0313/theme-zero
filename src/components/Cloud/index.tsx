@@ -28,16 +28,18 @@ const renderCloudIcon = (code: string): React.ReactElement => {
 }
 
 const Cloud: React.FC<CloudProps> = () => {
+  const [city, setCity] = useState('')
   const [weather, setWeather] = useState('晴')
   const [temperature, setTemperature] = useState('26')
   const [code, setCode] = useState('0')
 
   useEffect(() => {
     queryCloud().then((data) => {
-      const cloud = data.now
-      setWeather(cloud.text)
-      setTemperature(cloud.temperature)
-      setCode(cloud.code)
+      const { now, location } = data
+      setCity(location.name)
+      setWeather(now.text)
+      setTemperature(now.temperature)
+      setCode(now.code)
     })
   }, [])
 
@@ -46,7 +48,10 @@ const Cloud: React.FC<CloudProps> = () => {
       {renderCloudIcon(code)}
       <div className="flex flex-col justify-center px-1.5 transform">
         <span className="text-base leading-4">{temperature}℃</span>
-        <span className="text-xs">{weather}</span>
+        <span className="text-xs">
+          {city && `${city}·`}
+          {weather}
+        </span>
       </div>
     </div>
   )
