@@ -1,168 +1,38 @@
 .spinner {
   position: relative;
-  margin: 0.8rem;
+  width: 320px;
+  height: 40px;
+  overflow: hidden;
 }
-.spinner .spin {
+
+.prospect {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0.625rem;
-  height: 1.25rem;
-  transform: translate(-50%, -50%);
-  animation: spinner 2s ease-out infinite;
+  top: 100px;
+  left: 0;
+  filter: drop-shadow(0 -100px 0 var(--black));
 }
-.spinner .spin .branch {
+
+.background {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0.125rem;
-  height: 0;
-  transform: translate(-50%, -50%);
-}
-.spinner .spin .branch:before,
-.spinner .spin .branch:after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #699bff;
-  width: 0.3125rem;
-  height: 0.3125rem;
-  border-radius: 100%;
-}
-.spinner .spin .branch:before {
-  top: 0%;
-}
-.spinner .spin .branch:after {
-  top: 100%;
-}
-.spinner .spin .branch:nth-child(1) {
-  animation: extend1 2s ease-out infinite;
-  background-color: #3366cc;
-}
-.spinner .spin .branch:nth-child(1):before,
-.spinner .spin .branch:nth-child(1):after {
-  width: 0.625rem;
-  height: 0.625rem;
-}
-.spinner .spin .branch:nth-child(2) {
-  animation: extend2 2s ease-out infinite;
-}
-.spinner .spin .branch:nth-child(3) {
-  animation: extend3 2s ease-out infinite;
-}
-.spinner:nth-child(1) .spin {
-  animation-delay: 0.2s;
-}
-.spinner:nth-child(1) .spin .branch {
-  animation-delay: 0.2s;
-}
-.spinner:nth-child(2) .spin {
-  animation-delay: 0.4s;
-}
-.spinner:nth-child(2) .spin .branch {
-  animation-delay: 0.4s;
-}
-.spinner:nth-child(3) .spin {
-  animation-delay: 0.6s;
-}
-.spinner:nth-child(3) .spin .branch {
-  animation-delay: 0.6s;
-}
-.spinner:nth-child(4) .spin {
-  animation-delay: 0.8s;
-}
-.spinner:nth-child(4) .spin .branch {
-  animation-delay: 0.8s;
-}
-.spinner:nth-child(5) .spin {
-  animation-delay: 1s;
-}
-.spinner:nth-child(5) .spin .branch {
-  animation-delay: 1s;
-}
-.spinner:nth-child(6) .spin {
-  animation-delay: 1.2s;
-}
-.spinner:nth-child(6) .spin .branch {
-  animation-delay: 1.2s;
-}
-.spinner:nth-child(7) .spin {
-  animation-delay: 1.4s;
-}
-.spinner:nth-child(7) .spin .branch {
-  animation-delay: 1.4s;
-}
-.spinner:nth-child(8) .spin {
-  animation-delay: 1.6s;
-}
-.spinner:nth-child(8) .spin .branch {
-  animation-delay: 1.6s;
-}
-.spinner:nth-child(9) .spin {
-  animation-delay: 1.8s;
-}
-.spinner:nth-child(9) .spin .branch {
-  animation-delay: 1.8s;
-}
-.spinner:nth-child(10) .spin {
-  animation-delay: 2s;
-}
-.spinner:nth-child(10) .spin .branch {
-  animation-delay: 2s;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: width;
+  overflow: hidden;
+  animation: loading 4s cubic-bezier(0.28, 0.11, 0.32, 1) infinite forwards;
 }
 
-@keyframes spinner {
-  0%,
-  25% {
-    transform: translate(-50%, -50%) rotate(90deg);
-  }
-  75%,
-  100% {
-    transform: translate(-50%, -50%) rotate(180deg);
-  }
+.background img {
+  min-width: 320px;
+  min-height: 40px;
 }
 
-@keyframes extend1 {
-  0%,
-  25%,
-  75%,
+@keyframes loading {
+  0% {
+    width: 0;
+  }
   100% {
-    height: 0;
-  }
-  49%,
-  51% {
-    height: 6.4rem;
-  }
-}
-
-@keyframes extend2 {
-  0%,
-  25%,
-  85%,
-  100% {
-    height: 0;
-  }
-  54%,
-  56% {
-    height: 9.6rem;
-  }
-}
-
-@keyframes extend3 {
-  0%,
-  25%,
-  75%,
-  100% {
-    height: 0;
-  }
-  40% {
-    height: 3.2rem;
-  }
-  60% {
-    height: 0;
-  }
-  70% {
-    height: 0.64rem;
+    width: 100%;
   }
 }

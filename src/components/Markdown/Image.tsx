@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ComponentPropsWithoutRef, ComponentType, ReactMarkdownProps } from 'react-markdown/lib/ast-to-react'
 import clsx from 'clsx'
-import Spinner from '@components/Spinner'
+import Spinner from '@/components/Spinner'
 import { fileCDN, formatImg } from '@/utils/format'
 import { useLoading } from '@/utils/hook'
 
@@ -17,7 +17,7 @@ const Image: ImageComponent = ({ src = '', alt = '' }) => {
 
   useEffect(() => {
     const img = new window.Image()
-    img.onload = img.onerror = async () => {
+    img.onload = async () => {
       await delay()
       setloading(false)
     }

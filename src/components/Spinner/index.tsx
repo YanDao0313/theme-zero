@@ -1,26 +1,20 @@
 import React from 'react'
 import './index.css'
+import Loading from '@/assets/images/loading.png'
 
-type SpinnerProps = {}
+type GenshinProps = {}
 
-const Spinner: React.FC<SpinnerProps> = () => {
-  const spinnerArr = new Array(10).fill(0)
-  const branchArr = new Array(3).fill(0)
+const Genshin: React.FC<GenshinProps> = () => {
   return (
     <div className="flex justify-center items-center mt-28 mb-24">
-      {spinnerArr.map((_, i) => {
-        return (
-          <div key={i} className="spinner">
-            <div className="spin">
-              {branchArr.map((_, j) => {
-                return <div key={j} className="branch"></div>
-              })}
-            </div>
-          </div>
-        )
-      })}
+      <div className="spinner">
+        <img className="prospect" src={Loading} alt="Loading..."></img>
+        <div className="background">
+          <img src={Loading} alt="Loading..."></img>
+        </div>
+      </div>
     </div>
   )
 }
 
-export default Spinner
+export default Genshin

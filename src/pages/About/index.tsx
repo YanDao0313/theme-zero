@@ -1,10 +1,5 @@
 import React from 'react'
-import Genshin from '@components/Genshin'
 
-const About = () => (
-  <div>
-    <Genshin />
-  </div>
-)
+const About = () => <div>About</div>
 
 export default About
