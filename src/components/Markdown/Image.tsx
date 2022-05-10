@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { ComponentPropsWithoutRef, ComponentType, ReactMarkdownProps } from 'react-markdown/lib/ast-to-react'
 import clsx from 'clsx'
 import Spinner from '@/components/Spinner'
-import { fileCDN, formatImg } from '@/utils/format'
+import { fileCDN } from '@/utils/format'
 import { useLoading } from '@/utils/hook'
+import styles from './index.module.css'
 
 type ImageProps = ComponentPropsWithoutRef<'img'> & ReactMarkdownProps
 
@@ -13,7 +14,6 @@ const Image: ImageComponent = ({ src = '', alt = '' }) => {
   const [loading, setloading] = useState(true)
   const delay = useLoading()
   const cdnSrc = fileCDN(src)
-  const imgStyle = formatImg(cdnSrc)
 
   useEffect(() => {
     const img = new window.Image()
@@ -27,7 +27,7 @@ const Image: ImageComponent = ({ src = '', alt = '' }) => {
 
   return (
     <>
-      <img className={clsx('img-zoomable m-auto fade', loading && 'hidden')} src={cdnSrc} alt={alt} style={imgStyle} />
+      <img className={clsx('img-zoomable m-auto fade rounded shadow-md', loading && 'hidden')} src={cdnSrc} alt={alt} />
       {loading && <Spinner />}
       {alt && <span className="block mt-2 text-center italic">◭ {alt}</span>}
     </>

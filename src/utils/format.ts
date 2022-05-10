@@ -31,28 +31,3 @@ export const fileCDN = (url: string) => {
   }
   return url
 }
-
-/**
- * 图片处理
- */
-export const formatImg = (href: string) => {
-  const urlParams = new URLSearchParams(href.split('?')[1])
-  const vw = Number(urlParams.get('vw'))
-  const vh = Number(urlParams.get('vh'))
-  const clientWidth = document.querySelector('.page')!.clientWidth
-
-  // 是否预设尺寸
-  let width = vw
-  let height = vh
-  if (width > 0) {
-    if (width > clientWidth) {
-      width = clientWidth
-    }
-
-    if (height) {
-      height = (height * width) / vw
-    }
-  }
-
-  return { width: width ? `${width}px` : '', height: height ? `${height}px` : '' }
-}
