@@ -8,6 +8,7 @@ import { Calendar, Bookmark, Tag } from '@components/Icons'
 import { queryIssues } from '@utils/service'
 import { formatIssue } from '@utils/format'
 import { useLoading } from '@/utils/hook'
+import { dispatch, ActionType, useStore } from '@utils/store'
 import styles from './index.module.css'
 
 type HomeProps = {}
@@ -26,8 +27,13 @@ const Home: React.FC<HomeProps> = () => {
   const [maskHeight, setMaskHeight] = useState(0)
   const [maskTop, setMaskTop] = useState(0)
 
+  const { count, collection } = useStore()
+
   const handleQuery = () => {
     loadingRef.current = true
+
+    // TODO：全局 store
+
     queryIssues(page)
       .then(async (data) => {
         if (page === 1) {
