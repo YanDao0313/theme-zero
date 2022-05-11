@@ -1,4 +1,4 @@
-import { Cloud, Issue, GithubGraphQL } from '@/type'
+import { Cloud, Issue, GraphQLModel, GraphQLResponse } from '@/type'
 import config from '@/config'
 import documents from './documents'
 
@@ -38,7 +38,7 @@ const createCall = async <T>(document: string): Promise<T> => {
     })
     if (response.ok) {
       const result = await response.json()
-      return result.data
+      return result
     } else {
       const error = new Error(response.statusText)
       return Promise.reject(error)
@@ -48,11 +48,13 @@ const createCall = async <T>(document: string): Promise<T> => {
   }
 }
 
-export const queryIssuesCount = () => createCall(documents.queryIssuesCount({ username, repository }))
+export const queryIssuesCount = (): Promise<GraphQLResponse> =>
+  createCall(documents.queryIssuesCount({ username, repository }))
 
-export const queryInspirationCount = () => createCall(documents.queryInspirationCount({ username, repository }))
+export const queryInspirationCount = (): Promise<GraphQLResponse> =>
+  createCall(documents.queryInspirationCount({ username, repository }))
 
-export const queryFilterIssuesCount = ({ label, milestone }: GithubGraphQL) =>
+export const queryFilterIssuesCount = ({ label, milestone }: GraphQLModel): Promise<GraphQLResponse> =>
   createCall(documents.queryFilterIssuesCount({ username, repository, label, milestone }))
 
 export const queryIssues = async (

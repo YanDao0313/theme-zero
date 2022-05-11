@@ -2,17 +2,19 @@ import { useEffect, useState } from 'react'
 import { Issue } from '@/type'
 
 export enum ActionType {
-  QUERY_COUNT,
-  QUERY_ISSUES,
+  SET_COUNT,
+  SET_ISSUES,
 }
 
 type Action =
   | {
-      type: ActionType.QUERY_COUNT
+      type: ActionType.SET_COUNT
+      count: number
     }
   | {
-      type: ActionType.QUERY_ISSUES
+      type: ActionType.SET_ISSUES
       page: number
+      issues: Array<Issue>
     }
 
 interface State {
@@ -29,13 +31,17 @@ const listeners: Array<(state: State) => void> = []
 
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
-    case ActionType.QUERY_COUNT:
+    case ActionType.SET_COUNT:
       return {
         ...state,
+        count: action.count,
       }
-    case ActionType.QUERY_ISSUES:
+    case ActionType.SET_ISSUES:
+      const collection = state.collection
+      collection.set(action.page, action.issues)
       return {
         ...state,
+        collection,
       }
   }
 }

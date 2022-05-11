@@ -16,11 +16,21 @@ export type Cloud = {
   last_update: string
 }
 
-export type GithubGraphQL = {
+export type GraphQLModel = {
   username: string
   repository: string
   label?: string
   milestone?: string
+}
+
+export type GraphQLResponse = {
+  data: {
+    repository: {
+      issues: {
+        totalCount: number
+      }
+    }
+  }
 }
 
 export type Label = {

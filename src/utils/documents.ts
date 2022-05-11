@@ -1,7 +1,7 @@
-import { GithubGraphQL } from '@/type'
+import { GraphQLModel } from '@/type'
 
 export default {
-  queryIssuesCount: ({ username, repository }: GithubGraphQL) => `
+  queryIssuesCount: ({ username, repository }: GraphQLModel) => `
     query { 
       repository(owner:"${username}", name: "${repository}") {
         issues(states:OPEN) {
@@ -10,7 +10,7 @@ export default {
       }
     }
   `,
-  queryInspirationCount: ({ username, repository }: GithubGraphQL) => `
+  queryInspirationCount: ({ username, repository }: GraphQLModel) => `
     query {
       repository(owner:"${username}", name: "${repository}") {
         issues(states:CLOSED, labels: ["Inspiration"]) {
@@ -19,7 +19,7 @@ export default {
       }
     }
   `,
-  queryFilterIssuesCount: ({ username, repository, label, milestone }: GithubGraphQL) => `
+  queryFilterIssuesCount: ({ username, repository, label, milestone }: GraphQLModel) => `
     {
       search(type: ISSUE, query: "
         user:${username}
