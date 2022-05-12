@@ -46,3 +46,5 @@ export type Issue = {
   milestone: Milestone
   labels: Array<Label>
 }
+
+export type IssueLabel = 'About' | 'Friend' | 'Book'

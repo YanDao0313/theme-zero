@@ -4,12 +4,12 @@ import { useActivate } from 'react-activation'
 import clsx from 'clsx'
 import AOS from 'aos'
 import { Issue } from '@/type'
-import Loading from '@components/Loading'
-import Markdown from '@/components/Markdown'
-import { Calendar, Bookmark, Tag } from '@components/Icons'
 import { queryIssues } from '@utils/service'
 import { formatIssue } from '@utils/format'
 import { useLoading } from '@/utils/hook'
+import Loading from '@components/Loading'
+import Markdown from '@/components/Markdown'
+import { Calendar, Bookmark, Tag } from '@components/Icons'
 import styles from './index.module.css'
 
 type HomeProps = {}
@@ -52,6 +52,7 @@ const Home: React.FC<HomeProps> = () => {
           }, 100)
         }
       })
+      .catch(console.error)
       .finally(() => {
         loadingRef.current = false
       })
@@ -110,8 +111,6 @@ const Home: React.FC<HomeProps> = () => {
   useActivate(() => {
     hoverRef.current.scrollIntoView()
   })
-
-  console.log('issues.length', issues.length)
 
   return (
     <div className="page">

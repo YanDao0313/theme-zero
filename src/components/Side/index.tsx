@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import clsx from 'clsx'
 import './index.css'
 import ShootingStar from '@components/ShootingStar'
 import Poetry from '@components/Poetry'
@@ -25,6 +26,9 @@ const { github, twitter, telegram, email, music } = config.contact
 type SideProps = {}
 
 const Side: React.FC<SideProps> = () => {
+  const location = useLocation()
+  const pathname = location.pathname
+
   return (
     <div className="side fixed top-0 left-0 h-full overflow-hidden flex flex-col justify-between">
       <ShootingStar />
@@ -32,22 +36,22 @@ const Side: React.FC<SideProps> = () => {
       {/* side menu */}
       <div className="w-full h-2/3 flex justify-end pb-10">
         <nav className="nav nav-y flex flex-col justify-end items-center w-12">
-          <Link to="/">
+          <Link className={clsx(pathname === '/' && 'active')} to="/">
             <Villa />
           </Link>
-          <Link to="/archive">
+          <Link className={clsx(pathname === '/archive' && 'active')} to="/archive">
             <Inbox />
           </Link>
-          <Link to="/book">
+          <Link className={clsx(pathname === '/book' && 'active')} to="/book">
             <Book />
           </Link>
-          <Link to="/inspiration">
+          <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration">
             <Message />
           </Link>
-          <Link to="/friend">
+          <Link className={clsx(pathname === '/friend' && 'active')} to="/friend">
             <Heart />
           </Link>
-          <Link to="/about">
+          <Link className={clsx(pathname === '/about' && 'active')} to="/about">
             <User />
           </Link>
         </nav>

@@ -14,6 +14,10 @@
   @apply hover:-translate-y-1;
 }
 
+.nav > a.active {
+  color: var(--blue);
+}
+
 .title,
 .subtitle {
   font-family: GuDianMingChaoTi;

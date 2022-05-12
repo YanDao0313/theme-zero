@@ -1,4 +1,4 @@
-import { Cloud, Issue } from '@/type'
+import { Cloud, Issue, IssueLabel } from '@/type'
 import config from '@/config'
 
 const GITHUB_API = 'https://api.github.com/repos'
@@ -37,6 +37,11 @@ export const queryIssues = async (
 
 export const queryIssue = async (number: string): Promise<Issue> => {
   const api = `${blog}/issues/${number}?state=open`
+  return githubQuery(api)
+}
+
+export const queryIssueByLabel = async (label: IssueLabel): Promise<Array<Issue>> => {
+  const api = `${blog}/issues?state=closed&labels=${label}`
   return githubQuery(api)
 }
 
