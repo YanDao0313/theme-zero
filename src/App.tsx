@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
+import KeepAlive from 'react-activation'
 import './App.css'
 import Side from '@components/Side'
 import Cloud from '@components/Cloud'
@@ -21,7 +22,14 @@ const ZeroRoutes = () => {
         addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
       >
         <Routes location={location}>
-          <Route path={'/'} element={<Home />} />
+          <Route
+            path={'/'}
+            element={
+              <KeepAlive>
+                <Home />
+              </KeepAlive>
+            }
+          />
           <Route path={'/about'} element={<About />} />
           <Route path={'/post/:num'} element={<Post />} />
         </Routes>

@@ -16,23 +16,6 @@ export type Cloud = {
   last_update: string
 }
 
-export type GraphQLModel = {
-  username: string
-  repository: string
-  label?: string
-  milestone?: string
-}
-
-export type GraphQLResponse = {
-  data: {
-    repository: {
-      issues: {
-        totalCount: number
-      }
-    }
-  }
-}
-
 export type Label = {
   id: number
   url: string
