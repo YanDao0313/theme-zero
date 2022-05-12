@@ -119,7 +119,7 @@ const Inspiration: React.FC<InspirationProps> = () => {
               transform: `translateY(${maskTop}px)`,
             }}
           ></div>
-          <div ref={listRef} className="relative z-10 space-y-4">
+          <div ref={listRef} className="relative space-y-4 overflow-y-hidden">
             {issues.map((issue) => {
               return (
                 <article
