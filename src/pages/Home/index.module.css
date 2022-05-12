@@ -14,3 +14,7 @@
   background-color: var(--blue-light);
   transform: translateY(-50%);
 }
+
+.home-md p {
+  @apply mb-4;
+}

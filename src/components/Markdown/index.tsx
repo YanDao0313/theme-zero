@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import clsx from 'clsx'
 // @ts-ignore
 import Zooming from 'zooming'
 import Heading from './Heading'
@@ -10,6 +11,7 @@ import Code from './Code'
 import styles from './index.module.css'
 
 type MarkdownProps = {
+  className?: string
   content: string
 }
 
@@ -18,7 +20,7 @@ const zooming = new Zooming({
   enableGrab: false,
 })
 
-const Markdown: React.FC<MarkdownProps> = ({ content }) => {
+const Markdown: React.FC<MarkdownProps> = ({ className, content }) => {
   useLayoutEffect(() => {
     zooming.listen('.img-zoomable')
   }, [])
@@ -26,7 +28,7 @@ const Markdown: React.FC<MarkdownProps> = ({ content }) => {
   return (
     <div className="text-justify leading-relaxed">
       <ReactMarkdown
-        className={styles.markdown}
+        className={clsx(className, styles.markdown)}
         children={content}
         remarkPlugins={[remarkGfm]}
         components={{

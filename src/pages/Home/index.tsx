@@ -129,7 +129,7 @@ const Home: React.FC<HomeProps> = () => {
                   onMouseEnter={handleMask}
                 >
                   <h3 className="text-xl italic mb-2">{issue.title}</h3>
-                  <Markdown content={issue.description} />
+                  <Markdown className={styles['home-md']} content={issue.description} />
                   <div className="flex justify-start mt-2">
                     <Calendar className="mr-0.5" />
                     {issue.created_at}
