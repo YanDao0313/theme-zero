@@ -4,6 +4,7 @@ import AOS from 'aos'
 import { Issue } from '@/type'
 import { queryInspiration } from '@utils/service'
 import { useLoading } from '@/utils/hook'
+import { parseTime } from '@/utils'
 import Loading from '@components/Loading'
 import Markdown from '@/components/Markdown'
 import styles from './index.module.css'
@@ -129,7 +130,10 @@ const Inspiration: React.FC<InspirationProps> = () => {
                   onMouseOver={handleMask}
                   onMouseEnter={handleMask}
                 >
-                  <h3 className="text-xl italic mb-2">{issue.title}</h3>
+                  <div>
+                    <span>{parseTime(issue.created_at)}</span>
+                    <h3 className="text-xl italic mb-2">{issue.title}</h3>
+                  </div>
                   <Markdown className={styles['inspiration-md']} content={issue.body} />
                 </article>
               )
