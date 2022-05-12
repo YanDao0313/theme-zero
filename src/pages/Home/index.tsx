@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, MouseEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import clsx from 'clsx'
 import { useActivate } from 'react-activation'
+import clsx from 'clsx'
+import AOS from 'aos'
 import { Issue } from '@/type'
 import Loading from '@components/Loading'
 import Markdown from '@/components/Markdown'
@@ -87,11 +88,20 @@ const Home: React.FC<HomeProps> = () => {
     if (loadingRef.current || finishedRef.current) return
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement
     if (scrollTop + clientHeight > scrollHeight - 100) {
+      loadingRef.current = true // fix frequent loading
       setPage((page) => page + 1)
     }
   }
 
   useEffect(() => {
+    AOS.init({
+      duration: 500,
+      easing: 'ease',
+      debounceDelay: 50,
+      throttleDelay: 100,
+      offset: 50,
+    })
+
     window.addEventListener('scroll', handleScroll, false)
     return () => window.removeEventListener('scroll', handleScroll, false)
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -100,6 +110,8 @@ const Home: React.FC<HomeProps> = () => {
   useActivate(() => {
     hoverRef.current.scrollIntoView()
   })
+
+  console.log('issues.length', issues.length)
 
   return (
     <div className="page">
@@ -124,6 +136,7 @@ const Home: React.FC<HomeProps> = () => {
                 <article
                   key={issue.id}
                   className="cursor-pointer p-4 tracking-wide"
+                  data-aos="fade-up"
                   onClick={() => navigate(`/post/${issue.number}`)}
                   onMouseOver={handleMask}
                   onMouseEnter={handleMask}

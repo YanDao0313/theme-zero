@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useLoading = (duration: number = 1500) => {
+export const useLoading = (duration: number = 1000) => {
   const [startTime] = useState(new Date().getTime())
 
   const loading = () =>
