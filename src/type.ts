@@ -47,4 +47,11 @@ export type Issue = {
   labels: Array<Label>
 }
 
+export type QueryParams = {
+  page: number
+  pageSize?: number
+  state: 'open' | 'closed'
+  filter?: string
+}
+
 export type IssueLabel = 'About' | 'Friend' | 'Book'

@@ -1,4 +1,4 @@
-import { Cloud, Issue, IssueLabel } from '@/type'
+import { Cloud, Issue, QueryParams, IssueLabel } from '@/type'
 import config from '@/config'
 
 const GITHUB_API = 'https://api.github.com/repos'
@@ -26,12 +26,13 @@ const githubQuery = async <T>(api: string): Promise<T> => {
   }
 }
 
-export const queryIssues = async (
-  page: number = 1,
-  pageSize: number = 10,
-  filter: string = '',
-): Promise<Array<Issue>> => {
-  const api = `${blog}/issues?state=open&page=${page}&per_page=${pageSize}${filter}`
+export const queryIssues = async ({
+  page = 1,
+  pageSize = 10,
+  state = 'open',
+  filter = '',
+}: QueryParams): Promise<Array<Issue>> => {
+  const api = `${blog}/issues?state=${state}&page=${page}&per_page=${pageSize}${filter}`
   return githubQuery(api)
 }
 
@@ -44,6 +45,11 @@ export const queryIssueByLabel = async (label: IssueLabel): Promise<Array<Issue>
   const api = `${blog}/issues?state=closed&labels=${label}`
   return githubQuery(api)
 }
+
+export const queryArchive = async (page: number = 1): Promise<Array<Issue>> => queryIssues({ page, state: 'open' })
+
+export const queryInspiration = async (page: number = 1): Promise<Array<Issue>> =>
+  queryIssues({ page, state: 'closed', filter: '&labels=inspiration' })
 
 export const queryCloud = async (): Promise<Cloud> => {
   try {

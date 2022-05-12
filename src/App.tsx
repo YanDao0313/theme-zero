@@ -7,6 +7,7 @@ import Side from '@components/Side'
 import Cloud from '@components/Cloud'
 import Action from '@components/Action'
 import Home from '@/pages/Home'
+import Inspiration from '@/pages/Inspiration'
 import About from '@/pages/About'
 import Post from '@/pages/Post'
 
@@ -32,6 +33,7 @@ const ZeroRoutes = () => {
           />
           <Route path={'/about'} element={<About />} />
           <Route path={'/post/:num'} element={<Post />} />
+          <Route path={'/inspiration'} element={<Inspiration />} />
         </Routes>
       </CSSTransition>
     </SwitchTransition>

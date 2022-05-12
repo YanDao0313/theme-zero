@@ -1,21 +1,16 @@
 import React, { useState, useEffect, useRef, MouseEvent } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useActivate, useUnactivate } from 'react-activation'
 import clsx from 'clsx'
 import AOS from 'aos'
 import { Issue } from '@/type'
-import { queryArchive } from '@utils/service'
-import { formatIssue } from '@utils/format'
+import { queryInspiration } from '@utils/service'
 import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
 import Markdown from '@/components/Markdown'
-import { Calendar, Bookmark, Tag } from '@components/Icons'
 import styles from './index.module.css'
 
-type HomeProps = {}
+type InspirationProps = {}
 
-const Home: React.FC<HomeProps> = () => {
-  const navigate = useNavigate()
+const Inspiration: React.FC<InspirationProps> = () => {
   const loading = useLoading()
   const [page, setPage] = useState(1)
   const [issues, setIssues] = useState<Array<Issue>>([])
@@ -25,20 +20,18 @@ const Home: React.FC<HomeProps> = () => {
   const timerRef = useRef<number>()
   const loadingRef = useRef<boolean>(false)
   const finishedRef = useRef<boolean>(false)
-  const unactiveRef = useRef<boolean>(false)
   const [maskHeight, setMaskHeight] = useState(0)
   const [maskTop, setMaskTop] = useState(0)
 
   const handleQuery = () => {
     loadingRef.current = true
-    queryArchive(page)
+    queryInspiration(page)
       .then(async (data) => {
         if (page === 1) {
           await loading()
         }
 
         if (data.length) {
-          data = data.map(formatIssue)
           setIssues([...issues, ...data])
         } else {
           finishedRef.current = true
@@ -79,8 +72,6 @@ const Home: React.FC<HomeProps> = () => {
   }
 
   const handleScroll = () => {
-    if (unactiveRef.current) return
-
     clearTimeout(timerRef.current)
     timerRef.current = window.setTimeout(() => {
       if (hoverRef.current) {
@@ -111,15 +102,6 @@ const Home: React.FC<HomeProps> = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  useActivate(() => {
-    hoverRef.current.scrollIntoView()
-    unactiveRef.current = false
-  })
-
-  useUnactivate(() => {
-    unactiveRef.current = true
-  })
-
   return (
     <div className="page">
       {issues.length === 0 ? (
@@ -144,24 +126,11 @@ const Home: React.FC<HomeProps> = () => {
                   key={issue.id}
                   className="cursor-pointer p-4 tracking-wide"
                   data-aos="fade-up"
-                  onClick={() => navigate(`/post/${issue.number}`)}
                   onMouseOver={handleMask}
                   onMouseEnter={handleMask}
                 >
                   <h3 className="text-xl italic mb-2">{issue.title}</h3>
-                  <Markdown className={styles['home-md']} content={issue.description} />
-                  <div className="flex justify-start mt-2">
-                    <Calendar className="mr-0.5" />
-                    {issue.created_at}
-                    <Bookmark className="ml-4 mr-0.5" />
-                    {issue.milestone ? issue.milestone.title : '未分类'}
-                    <Tag className="ml-4 mr-0.5" />
-                    {issue.labels.map((label) => (
-                      <span className="mr-2" key={label.id}>
-                        {label.name}
-                      </span>
-                    ))}
-                  </div>
+                  <Markdown className={styles['inspiration-md']} content={issue.body} />
                 </article>
               )
             })}
@@ -171,4 +140,5 @@ const Home: React.FC<HomeProps> = () => {
     </div>
   )
 }
-export default Home
+
+export default Inspiration
