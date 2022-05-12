@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, MouseEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useActivate } from 'react-activation'
+import { useActivate, useUnactivate } from 'react-activation'
 import clsx from 'clsx'
 import AOS from 'aos'
 import { Issue } from '@/type'
@@ -25,6 +25,7 @@ const Home: React.FC<HomeProps> = () => {
   const timerRef = useRef<number>()
   const loadingRef = useRef<boolean>(false)
   const finishedRef = useRef<boolean>(false)
+  const unactiveRef = useRef<boolean>(false)
   const [maskHeight, setMaskHeight] = useState(0)
   const [maskTop, setMaskTop] = useState(0)
 
@@ -78,6 +79,8 @@ const Home: React.FC<HomeProps> = () => {
   }
 
   const handleScroll = () => {
+    if (unactiveRef.current) return
+
     clearTimeout(timerRef.current)
     timerRef.current = window.setTimeout(() => {
       if (hoverRef.current) {
@@ -110,6 +113,11 @@ const Home: React.FC<HomeProps> = () => {
 
   useActivate(() => {
     hoverRef.current.scrollIntoView()
+    unactiveRef.current = false
+  })
+
+  useUnactivate(() => {
+    unactiveRef.current = true
   })
 
   return (
