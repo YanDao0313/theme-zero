@@ -80,14 +80,12 @@ const Home: React.FC<HomeProps> = () => {
 
   const handleScroll = () => {
     if (unactiveRef.current) return
-
     clearTimeout(timerRef.current)
     timerRef.current = window.setTimeout(() => {
       if (hoverRef.current) {
         calcMaskPos(hoverRef.current)
       }
     }, 100)
-
     // load more
     if (loadingRef.current || finishedRef.current) return
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement
@@ -103,7 +101,7 @@ const Home: React.FC<HomeProps> = () => {
       easing: 'ease',
       debounceDelay: 50,
       throttleDelay: 100,
-      offset: 50,
+      offset: 0,
     })
 
     window.addEventListener('scroll', handleScroll, false)
@@ -143,7 +141,7 @@ const Home: React.FC<HomeProps> = () => {
                 <article
                   key={issue.id}
                   className="cursor-pointer p-4 tracking-wide"
-                  data-aos="fade-up"
+                  data-aos="fade-left"
                   onClick={() => navigate(`/post/${issue.number}`)}
                   onMouseOver={handleMask}
                   onMouseEnter={handleMask}

@@ -38,7 +38,7 @@ const Post: React.FC<PostProps> = () => {
   }, [num])
 
   return (
-    <div className="page select-text fix-overflow">
+    <div className="page select-text">
       {loading ? (
         <Loading />
       ) : (

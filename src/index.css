@@ -46,11 +46,7 @@
 
   /* custom page */
   .page {
-    @apply relative w-full min-h-screen pt-12 pr-32 flex items-center overflow-y-hidden;
-  }
-
-  .fix-overflow {
-    overflow: initial;
+    @apply relative w-full min-h-screen pt-12 pr-32 flex items-center;
   }
 
   /* page fade animation */

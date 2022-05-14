@@ -126,7 +126,7 @@ const Inspiration: React.FC<InspirationProps> = () => {
                 <article
                   key={issue.id}
                   className="cursor-pointer p-4 tracking-wide"
-                  data-aos="fade-up"
+                  data-aos="fade-left"
                   onMouseOver={handleMask}
                   onMouseEnter={handleMask}
                 >
