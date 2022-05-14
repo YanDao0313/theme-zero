@@ -120,7 +120,7 @@ const Inspiration: React.FC<InspirationProps> = () => {
               transform: `translateY(${maskTop}px)`,
             }}
           ></div>
-          <div ref={listRef} className="relative space-y-4 overflow-y-hidden">
+          <div ref={listRef} className="relative space-y-4">
             {issues.map((issue) => {
               return (
                 <article
@@ -130,9 +130,9 @@ const Inspiration: React.FC<InspirationProps> = () => {
                   onMouseOver={handleMask}
                   onMouseEnter={handleMask}
                 >
-                  <div>
-                    <span>{parseTime(issue.created_at)}</span>
-                    <h3 className="text-xl italic mb-2">{issue.title}</h3>
+                  <div className="flex">
+                    <h3 className="text-xl italic mr-2 mb-2">{issue.title}</h3>/
+                    <span className="ml-2">{parseTime(issue.created_at)}</span>
                   </div>
                   <Markdown className={styles['inspiration-md']} content={issue.body} />
                 </article>
