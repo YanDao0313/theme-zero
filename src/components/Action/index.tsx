@@ -29,7 +29,7 @@ const Action: React.FC<ActionProps> = () => {
   }, [])
 
   return (
-    <div className="fixed bottom-4 right-4 flex items-center z-10">
+    <div className="fixed bottom-4 right-4 flex items-center">
       <div className="action">
         <Send onClick={scrollToTop} />
       </div>

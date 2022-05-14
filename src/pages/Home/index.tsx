@@ -135,7 +135,7 @@ const Home: React.FC<HomeProps> = () => {
               transform: `translateY(${maskTop}px)`,
             }}
           ></div>
-          <div ref={listRef} className="relative z-10 space-y-4">
+          <div ref={listRef} className="relative space-y-4">
             {issues.map((issue) => {
               return (
                 <article
