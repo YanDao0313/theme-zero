@@ -44,7 +44,7 @@ const Cloud: React.FC<CloudProps> = () => {
   }, [])
 
   return (
-    <div className="fixed top-3 right-2 flex items-center">
+    <div className="fixed top-3 right-2 flex items-center z-10">
       {renderCloudIcon(code)}
       <div className="flex flex-col justify-center px-1.5 transform">
         <span className="text-base leading-4">{temperature}℃</span>

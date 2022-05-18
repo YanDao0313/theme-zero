@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ComponentPropsWithoutRef, ComponentType, ReactMarkdownProps } from 'react-markdown/lib/ast-to-react'
 import { External } from '@components/Icons'
-import styles from './index.module.css'
 
 type LinkProps = ComponentPropsWithoutRef<'a'> & ReactMarkdownProps
 
@@ -33,7 +32,7 @@ const Link: LinkComponent = ({ href, children }) => {
   }
 
   return (
-    <a className={styles.link} href={href} onClick={handleRedirect} target="_blank" rel="noopener noreferrer">
+    <a className="link" href={href} onClick={handleRedirect} target="_blank" rel="noopener noreferrer">
       {children}
       <External className="inline-block w-5 h-5 transform -translate-y-0.5" />
     </a>

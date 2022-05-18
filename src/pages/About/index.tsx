@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Issue, IssueLabel } from '@/type'
-import { useLoading } from '@/utils/hook'
+import { Issue } from '@/type'
 import { queryIssueByLabel } from '@utils/service'
+import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
 import Markdown from '@/components/Markdown'
 

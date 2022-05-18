@@ -32,30 +32,6 @@ h6.heading {
   @apply text-base;
 }
 
-.link {
-  @apply relative;
-  color: var(--blue-light);
-}
-.link::after {
-  @apply absolute left-1/2 bottom-0 w-0 h-px bg-current 
-  transform transition-all duration-500 -translate-x-1/2;
-  content: '';
-}
-.link:hover::after {
-  @apply w-full;
-}
-
-.link::before {
-  @apply absolute top-0 left-0 py-0.5 px-1.5 z-10 text-sm break-normal whitespace-nowrap rounded shadow-inner
-  origin-bottom-left transform transition-all duration-500 opacity-0 scale-50 -translate-y-4;
-  content: attr(href);
-  color: var(--blue-light);
-  background-color: var(--black);
-}
-.link:hover::before {
-  @apply opacity-100 scale-100 -translate-y-7;
-}
-
 .code,
 .inline-code {
   @apply rounded shadow-inner;

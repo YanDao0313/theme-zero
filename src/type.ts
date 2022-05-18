@@ -55,3 +55,7 @@ export type QueryParams = {
 }
 
 export type IssueLabel = 'About' | 'Friend' | 'Book'
+
+export type CustomIssue = {
+  [key: string]: any
+}

@@ -7,7 +7,9 @@ import Side from '@components/Side'
 import Cloud from '@components/Cloud'
 import Action from '@components/Action'
 import Home from '@/pages/Home'
+import Book from '@/pages/Book'
 import Inspiration from '@/pages/Inspiration'
+import Friend from '@/pages/Friend'
 import About from '@/pages/About'
 import Post from '@/pages/Post'
 
@@ -31,9 +33,11 @@ const ZeroRoutes = () => {
               </KeepAlive>
             }
           />
+          <Route path={'/book'} element={<Book />} />
+          <Route path={'/inspiration'} element={<Inspiration />} />
+          <Route path={'/friend'} element={<Friend />} />
           <Route path={'/about'} element={<About />} />
           <Route path={'/post/:num'} element={<Post />} />
-          <Route path={'/inspiration'} element={<Inspiration />} />
         </Routes>
       </CSSTransition>
     </SwitchTransition>

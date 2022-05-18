@@ -21,7 +21,7 @@ import {
 } from '@components/Icons'
 import config from '@/config'
 
-const { github, twitter, telegram, email, music } = config.contact
+const { github, twitter, telegram, email, music, blog } = config.contact
 
 type SideProps = {}
 
@@ -81,7 +81,7 @@ const Side: React.FC<SideProps> = () => {
           <a href={music} rel="noopener noreferrer" target="_blank">
             <Music />
           </a>
-          <a href={github} rel="noopener noreferrer" target="_blank">
+          <a href={blog} rel="noopener noreferrer" target="_blank">
             <Moon />
           </a>
         </div>

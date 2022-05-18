@@ -1,5 +1,5 @@
 import { format } from 'timeago.js'
-import { Issue } from '@/type'
+import { Issue, CustomIssue } from '@/type'
 
 /**
  * 格式化文章
@@ -17,6 +17,31 @@ export const formatIssue = (issue: Issue): Issue => {
   }
   issue.created_at = format(created_at, 'zh_CN').replace(/\s/, '')
   return issue
+}
+
+/**
+ * 格式化书单 & 友链
+ */
+export const formatPage = (data: Issue): Array<CustomIssue> => {
+  if (!data || !data.body) return []
+  const section = data.body.split('## ').filter((o) => o.length)
+  const result = section.map((o) => {
+    const content = o.split('\r\n').filter((o) => o.length)
+    const item: CustomIssue = {}
+    content.forEach((row, index) => {
+      if (index === 0) {
+        item.name = row
+      } else {
+        const inx = row.indexOf(':')
+        const key = row.slice(0, inx).trim()
+        const value = row.slice(inx + 1).trim()
+        item[key] = value
+      }
+    })
+    return item
+  })
+
+  return result
 }
 
 /**
