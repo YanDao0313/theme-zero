@@ -18,9 +18,6 @@ const Comment: React.FC<CommentProps> = ({ title }) => {
 
     const dom = document.querySelector('.comment')
     dom?.appendChild(script)
-    return () => {
-      dom?.removeChild(script)
-    }
   }, [title])
 
   return <div className="comment"></div>

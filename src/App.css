@@ -2,15 +2,16 @@
   @apply min-h-screen overflow-x-hidden select-none text-gray-200 tracking-wide 
   bg-gray-800 bg-no-repeat bg-fixed;
   padding-left: 33.333333vw;
-  background-size: 100vw auto;
-  background-position: left center;
-  background-image: url('./assets/images/background.jpg');
+  background-color: var(--black-lighter);
 }
 
 .app::before {
   @apply fixed top-0 left-0 w-screen h-screen;
   content: '';
-  background-color: var(--black-lighter);
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-image: url('./assets/images/background.jpg');
 }
 
 /* page fade animation */
