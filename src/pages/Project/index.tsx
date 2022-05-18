@@ -6,14 +6,14 @@ import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
 import { External } from '@components/Icons'
 
-type BookProps = {}
+type ProjectProps = {}
 
-const Book: React.FC<BookProps> = () => {
+const Project: React.FC<ProjectProps> = () => {
   const loading = useLoading()
   const [list, setList] = useState<Array<CustomIssue>>([])
 
   const handleQuery = () => {
-    queryIssueByLabel('Book')
+    queryIssueByLabel('Project')
       .then(async (data) => {
         await loading()
         const list = formatPage(data[0])
@@ -33,12 +33,10 @@ const Book: React.FC<BookProps> = () => {
           {list.map((item) => {
             return (
               <div className="mb-10 leading-relaxed">
-                <a className="link text-xl" href={item.link} target="_blank" rel="noopener noreferrer">
+                <a className="link text-xl" href={item.code} target="_blank" rel="noopener noreferrer">
                   {item.name}
                   <External className="inline-block w-5 h-5 transform -translate-y-0.5" />
                 </a>
-                <p>作者：{item.author}</p>
-                <p>出版时间：{item.published}</p>
                 <p>{item.description}</p>
               </div>
             )
@@ -51,4 +49,4 @@ const Book: React.FC<BookProps> = () => {
   )
 }
 
-export default Book
+export default Project

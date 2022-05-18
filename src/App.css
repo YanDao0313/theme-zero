@@ -15,7 +15,7 @@
 
 /* page fade animation */
 .fade {
-  width: 100%;
+  @apply w-full self-start;
   animation: fade 0.8s ease-out;
 }
 @keyframes fade {

@@ -39,7 +39,7 @@ const Side: React.FC<SideProps> = () => {
           <Link className={clsx(pathname === '/' && 'active')} to="/">
             <Villa />
           </Link>
-          <Link className={clsx(pathname === '/archive' && 'active')} to="/archive">
+          <Link className={clsx(pathname === '/project' && 'active')} to="/project">
             <Inbox />
           </Link>
           <Link className={clsx(pathname === '/book' && 'active')} to="/book">

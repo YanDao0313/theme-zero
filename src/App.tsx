@@ -7,6 +7,7 @@ import Side from '@components/Side'
 import Cloud from '@components/Cloud'
 import Action from '@components/Action'
 import Home from '@/pages/Home'
+import Project from '@/pages/Project'
 import Book from '@/pages/Book'
 import Inspiration from '@/pages/Inspiration'
 import Friend from '@/pages/Friend'
@@ -33,6 +34,7 @@ const ZeroRoutes = () => {
               </KeepAlive>
             }
           />
+          <Route path={'/project'} element={<Project />} />
           <Route path={'/book'} element={<Book />} />
           <Route path={'/inspiration'} element={<Inspiration />} />
           <Route path={'/friend'} element={<Friend />} />
