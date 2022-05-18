@@ -24,6 +24,7 @@ const Book: React.FC<BookProps> = () => {
 
   useEffect(() => {
     handleQuery()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -32,7 +33,7 @@ const Book: React.FC<BookProps> = () => {
         <div className="fade select-text my-10">
           {list.map((item) => {
             return (
-              <div className="mb-10 leading-relaxed">
+              <div key={item.name} className="mb-10 leading-relaxed">
                 <a className="link text-xl" href={item.link} target="_blank" rel="noopener noreferrer">
                   {item.name}
                   <External className="inline-block w-5 h-5 transform -translate-y-0.5" />

@@ -23,6 +23,7 @@ const Friend: React.FC<FriendProps> = () => {
 
   useEffect(() => {
     handleQuery()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -32,7 +33,7 @@ const Friend: React.FC<FriendProps> = () => {
           <ul>
             {list.map((item) => {
               return (
-                <li className="inline-block mb-4 w-1/4">
+                <li key={item.name} className="inline-block mb-4 w-1/4">
                   <a className="link link-defalut" href={item.link} target="_blank" rel="noopener noreferrer">
                     {item.name}
                   </a>

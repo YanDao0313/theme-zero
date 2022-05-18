@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Send } from '@components/Icons'
 import './index.css'
 
 type ActionProps = {}
 
 const Action: React.FC<ActionProps> = () => {
-  const navigate = useNavigate()
   const timerRef = useRef<number>()
-  const [showAction, setShowAction] = useState(false)
+  const [showBackTop, setShowBackTop] = useState(false)
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -17,8 +15,7 @@ const Action: React.FC<ActionProps> = () => {
   const handleScroll = () => {
     clearTimeout(timerRef.current)
     timerRef.current = window.setTimeout(() => {
-      const showBackTop = window.pageYOffset >= 200
-      setShowAction(showBackTop)
+      setShowBackTop(window.pageYOffset >= 200)
     }, 100)
   }
 
@@ -29,10 +26,8 @@ const Action: React.FC<ActionProps> = () => {
   }, [])
 
   return (
-    <div className="fixed bottom-4 right-4 flex items-center">
-      <div className="action">
-        <Send onClick={scrollToTop} />
-      </div>
+    <div className="fixed bottom-4 right-4 flex items-center z-10">
+      {showBackTop && <Send className="action" onClick={scrollToTop} />}
     </div>
   )
 }
