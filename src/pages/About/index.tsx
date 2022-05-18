@@ -4,6 +4,7 @@ import { queryIssueByLabel } from '@utils/service'
 import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
 import Markdown from '@/components/Markdown'
+import Comment from '@/components/Comment'
 
 type AboutProps = {}
 
@@ -29,6 +30,7 @@ const About: React.FC<AboutProps> = () => {
       {issue ? (
         <div className="fade select-text">
           <Markdown content={issue!.body} />
+          <Comment title="关于" />
         </div>
       ) : (
         <Loading />

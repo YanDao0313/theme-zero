@@ -4,7 +4,6 @@ import clsx from 'clsx'
 import Spinner from '@/components/Spinner'
 import { fileCDN } from '@/utils/format'
 import { useLoading } from '@/utils/hook'
-import styles from './index.module.css'
 
 type ImageProps = ComponentPropsWithoutRef<'img'> & ReactMarkdownProps
 
