@@ -30,12 +30,12 @@ const Side: React.FC<SideProps> = () => {
   const pathname = location.pathname
 
   return (
-    <div className="side fixed top-0 left-0 h-full overflow-hidden flex flex-col justify-between">
+    <div className="side lg:fixed lg:top-0 lg:left-0 lg:h-full overflow-hidden flex flex-col justify-between">
       <ShootingStar />
 
       {/* side menu */}
-      <div className="w-full h-2/3 flex justify-end pb-10">
-        <nav className="nav nav-y flex flex-col justify-end items-center w-12">
+      <div className="w-full h-2/3 flex flex-col-reverse items-center lg:flex-row lg:items-end justify-end pb-4 lg:pb-10">
+        <nav className="nav nav-y flex lg:flex-col lg:justify-end justify-center items-center w-12">
           <Link className={clsx(pathname === '/' && 'active')} to="/">
             <Villa />
           </Link>
@@ -55,15 +55,15 @@ const Side: React.FC<SideProps> = () => {
             <User />
           </Link>
         </nav>
-        <div className="flex flex-col justify-end pl-5 pb-3 w-2/3 select-text">
+        <div className="flex flex-col justify-end pt-6 lg:pb-3 w-full lg:w-2/3 select-text text-center lg:text-left">
           <h3 className="title text-6xl tracking-wider">蟬時雨</h3>
-          <span className="subtitle pt-2 pb-8 pl-1 text-xl tracking-wider">蝉鸣如雨 花宵道中</span>
+          <span className="subtitle pt-2 pb-2 lg:pb-8 pl-1 text-xl tracking-wider">蝉鸣如雨 花宵道中</span>
           <Poetry />
         </div>
       </div>
 
       {/* footer menu */}
-      <div className="flex justify-end py-12">
+      <div className="hidden lg:flex justify-end py-12">
         <Butterfly />
         <div className="nav nav-x flex items-center w-2/3 h-12 ">
           <a href={github} rel="noopener noreferrer" target="_blank">

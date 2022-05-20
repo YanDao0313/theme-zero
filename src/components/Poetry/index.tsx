@@ -20,7 +20,7 @@ const Poetry: React.FC<PoetryProps> = () => {
   }, [])
 
   return (
-    <div className="h-12 flex-shrink-0 pl-1">
+    <div className="hidden lg:block h-12 flex-shrink-0 pl-1">
       <span className="poetry tracking-wide leading-relaxed"></span>
     </div>
   )

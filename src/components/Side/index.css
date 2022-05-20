@@ -2,6 +2,12 @@
   width: 33.333333vw;
 }
 
+@media (max-width: 1024px) {
+  .side {
+    @apply w-full;
+  }
+}
+
 .nav > a {
   @apply cursor-pointer p-2 transform duration-300 hover:scale-110;
 }

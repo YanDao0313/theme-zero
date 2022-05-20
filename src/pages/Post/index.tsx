@@ -6,6 +6,7 @@ import { formatIssue } from '@utils/format'
 import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
 import Markdown from '@/components/Markdown'
+import { Calendar, Bookmark, Tag } from '@components/Icons'
 
 type PostParams = {
   num: string
@@ -43,6 +44,21 @@ const Post: React.FC<PostProps> = () => {
         <Loading />
       ) : (
         <div className="fade">
+          <div className="my-8">
+            <h3 className="text-4xl mb-2">{issue?.title}</h3>
+            <div className="flex justify-start mt-2">
+              <Calendar className="mr-0.5" />
+              {issue?.created_at}
+              <Bookmark className="ml-4 mr-0.5" />
+              {issue?.milestone ? issue?.milestone.title : '未分类'}
+              <Tag className="ml-4 mr-0.5" />
+              {issue?.labels.map((label) => (
+                <span className="mr-2" key={label.id}>
+                  {label.name}
+                </span>
+              ))}
+            </div>
+          </div>
           <Markdown content={issue?.body ?? ''} />
         </div>
       )}
