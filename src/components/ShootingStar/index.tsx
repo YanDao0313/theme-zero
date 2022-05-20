@@ -6,7 +6,7 @@ type ShootingStarProps = {}
 const ShootingStar: React.FC<ShootingStarProps> = () => {
   const starArr = new Array(6).fill(0)
   return (
-    <div className="hidden lg:block absolute z-0 w-full h-full transform rotate-45">
+    <div className="absolute z-0 w-full h-full transform rotate-45">
       {starArr.map((_, i) => (
         <div key={i} className="shooting_star"></div>
       ))}

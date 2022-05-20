@@ -44,8 +44,8 @@ const Post: React.FC<PostProps> = () => {
         <Loading />
       ) : (
         <div className="fade">
-          <div className="my-8">
-            <h3 className="text-4xl mb-2">{issue?.title}</h3>
+          <div className="mt-4 mb-8">
+            <h3 className="text-3xl lg:text-4xl mb-2">{issue?.title}</h3>
             <div className="flex justify-start mt-2">
               <Calendar className="mr-0.5" />
               {issue?.created_at}

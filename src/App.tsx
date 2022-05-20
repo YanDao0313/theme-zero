@@ -4,6 +4,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import KeepAlive from 'react-activation'
 import './App.css'
 import Side from '@components/Side'
+import Header from './components/Header'
 import Cloud from '@components/Cloud'
 import Action from '@components/Action'
 import Home from '@/pages/Home'
@@ -52,6 +53,7 @@ const App = () => {
       <Cloud />
       <Action />
       <Side />
+      <Header />
       <ZeroRoutes />
     </div>
   )

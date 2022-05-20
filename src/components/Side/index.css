@@ -2,10 +2,9 @@
   width: 33.333333vw;
 }
 
-@media (max-width: 1024px) {
-  .side {
-    @apply w-full;
-  }
+.title,
+.subtitle {
+  font-family: GuDianMingChaoTi;
 }
 
 .nav > a {
@@ -22,9 +21,4 @@
 
 .nav > a.active {
   color: var(--blue);
-}
-
-.title,
-.subtitle {
-  font-family: GuDianMingChaoTi;
 }

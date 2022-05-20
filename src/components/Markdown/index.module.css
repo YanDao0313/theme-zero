@@ -43,6 +43,16 @@ h6.heading {
   color: var(--blue-light);
 }
 
+table {
+  @apply block my-6 max-w-full overflow-x-auto;
+}
+
+td,
+th {
+  @apply px-4 py-2;
+  border: 1px solid var(--white);
+}
+
 blockquote {
   @apply relative py-4 italic shadow-inner;
 }
