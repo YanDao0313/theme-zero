@@ -80,3 +80,18 @@ blockquote::after {
   mask: url('@/assets/icons/quote-right.svg') no-repeat 100% 100%;
   mask-size: cover;
 }
+
+ul,
+ol {
+  @apply mb-6;
+}
+
+ul {
+  @apply ml-8;
+  list-style-type: disc;
+}
+
+ol {
+  @apply ml-11;
+  list-style-type: decimal;
+}
