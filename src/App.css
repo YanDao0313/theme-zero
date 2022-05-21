@@ -11,6 +11,7 @@
   z-index: -1;
   background-size: cover;
   background-position: center;
+  background-color: var(--black);
   background-image: url('./assets/images/background.jpg');
 }
 
@@ -91,4 +92,8 @@
 
 .link-defalut:hover {
   color: var(--blue-light);
+}
+
+.markdown-body-scrollable {
+  background: #f60;
 }

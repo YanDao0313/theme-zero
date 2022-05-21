@@ -4,6 +4,7 @@ import { queryIssueByLabel } from '@utils/service'
 import { formatPage } from '@/utils/format'
 import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
+import Comment from '@/components/Comment'
 
 type FriendProps = {}
 
@@ -41,6 +42,7 @@ const Friend: React.FC<FriendProps> = () => {
               )
             })}
           </ul>
+          <Comment title="友链" />
         </div>
       ) : (
         <Loading />

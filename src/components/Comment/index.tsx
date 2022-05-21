@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react'
+import Gitalk from 'gitalk'
+import 'gitalk/dist/gitalk.css'
 import './index.css'
+import config from '@/config'
 
 type CommentProps = {
   title: string
@@ -7,20 +10,11 @@ type CommentProps = {
 
 const Comment: React.FC<CommentProps> = ({ title }) => {
   useEffect(() => {
-    const script = document.createElement('script')
-    script.type = 'text/javascript'
-    script.src = 'https://utteranc.es/client.js'
-    script.async = true
-    script.crossOrigin = 'anonymous'
-    script.setAttribute('repo', 'chanshiyucx/aurora')
-    script.setAttribute('theme', 'github-dark')
-    script.setAttribute('issue-term', title)
-
-    const dom = document.querySelector('.comment')
-    dom?.appendChild(script)
+    const gitalk = new Gitalk({ ...config.gitalk, title })
+    gitalk.render('gitalk')
   }, [title])
 
-  return <div className="comment"></div>
+  return <div id="gitalk" className="comment"></div>
 }
 
 export default Comment

@@ -158,7 +158,7 @@ const Home: React.FC<HomeProps> = () => {
                     <Calendar className="mr-0.5" />
                     {issue.created_at}
                     <Eye className="ml-4 mr-0.5" />
-                    {hot[issue.id]}℃
+                    {hot[issue.id] || 0}℃
                     <Bookmark className="ml-4 mr-0.5" />
                     {issue.milestone ? issue.milestone.title : '未分类'}
                     <Tag className="ml-4 mr-0.5" />
