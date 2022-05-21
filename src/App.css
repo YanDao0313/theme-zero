@@ -1,6 +1,5 @@
 .app {
-  @apply min-h-screen overflow-x-hidden select-none text-gray-200 tracking-wide 
-  bg-gray-800 bg-no-repeat bg-fixed;
+  @apply min-h-screen overflow-x-hidden select-none text-gray-200 tracking-wide bg-no-repeat bg-fixed;
   padding-left: 33.333333vw;
   background-color: var(--black-lighter);
 }
