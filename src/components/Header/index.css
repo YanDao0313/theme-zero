@@ -8,7 +8,7 @@
 }
 
 .nav {
-  animation: fade 0.3s ease-out;
+  animation: zoomIn 0.3s ease-out;
 }
 
 .nav > a {
@@ -24,8 +24,12 @@
 }
 
 .nav-over {
-  @apply absolute top-20 right-4 p-4 flex flex-col rounded shadow-sm z-10;
+  @apply absolute top-20 right-4 py-4 px-8 flex flex-col rounded shadow-sm z-10;
   background-color: var(--black);
+}
+
+.nav-over a {
+  @apply py-4;
 }
 
 .nav-over svg {
@@ -33,7 +37,7 @@
 }
 
 .toggle span {
-  @apply w-full my-1 rounded transform transition-all duration-500;
+  @apply w-full my-1 rounded transform transition-all duration-300;
   height: 2px;
   background-color: var(--white);
 }
@@ -48,4 +52,19 @@
 
 .toggle.active span:nth-child(3) {
   @apply -rotate-45 -translate-y-2.5;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

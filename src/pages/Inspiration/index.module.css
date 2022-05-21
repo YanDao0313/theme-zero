@@ -18,3 +18,7 @@
 .inspiration-md p {
   @apply mb-3;
 }
+
+.inspiration-md p:last-child {
+  @apply mb-0;
+}

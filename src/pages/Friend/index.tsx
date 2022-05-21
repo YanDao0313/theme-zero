@@ -29,7 +29,7 @@ const Friend: React.FC<FriendProps> = () => {
   return (
     <div className="page">
       {list.length ? (
-        <div className="fade select-text mb-10">
+        <div className="fade select-text my-10">
           <ul>
             {list.map((item) => {
               return (
