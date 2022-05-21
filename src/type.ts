@@ -59,3 +59,7 @@ export type IssueLabel = 'About' | 'Friend' | 'Book' | 'Project'
 export type CustomIssue = {
   [key: string]: any
 }
+
+export type Hot = {
+  [key: number]: number
+}

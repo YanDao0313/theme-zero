@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import KeepAlive from 'react-activation'
@@ -14,6 +14,8 @@ import Inspiration from '@/pages/Inspiration'
 import Friend from '@/pages/Friend'
 import About from '@/pages/About'
 import Post from '@/pages/Post'
+import { getLocation } from '@/utils'
+import { visitorStatistics } from '@utils/service'
 
 const ZeroRoutes = () => {
   const location = useLocation()
@@ -48,6 +50,12 @@ const ZeroRoutes = () => {
 }
 
 const App = () => {
+  useEffect(() => {
+    const referrer = getLocation(document.referrer)
+    const hostname = referrer.hostname || '直接访问'
+    visitorStatistics(hostname)
+  }, [])
+
   return (
     <div className="app">
       <Cloud />

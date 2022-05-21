@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Issue } from '@/type'
-import { queryIssue } from '@utils/service'
+import { queryIssue, increaseHot } from '@utils/service'
 import { formatIssue } from '@utils/format'
 import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
 import Markdown from '@/components/Markdown'
-import { Calendar, Bookmark, Tag } from '@components/Icons'
+import { Calendar, Bookmark, Tag, Eye } from '@components/Icons'
 
 type PostParams = {
   num: string
@@ -19,6 +19,7 @@ const Post: React.FC<PostProps> = () => {
   const { num = '' } = useParams<PostParams>()
   const [loading, setLoading] = useState(false)
   const [issue, setIssue] = useState<Issue>()
+  const [hot, setHot] = useState(0)
 
   const handleQuery = () => {
     setLoading(true)
@@ -27,6 +28,10 @@ const Post: React.FC<PostProps> = () => {
         await loadingRef()
         data = formatIssue(data)
         setIssue(data)
+
+        increaseHot(data.id, data.title).then((h) => {
+          setHot(h)
+        })
       })
       .finally(() => {
         setLoading(false)
@@ -49,6 +54,8 @@ const Post: React.FC<PostProps> = () => {
             <div className="flex justify-start mt-2">
               <Calendar className="mr-0.5" />
               {issue?.created_at}
+              <Eye className="ml-4 mr-0.5" />
+              {hot}℃
               <Bookmark className="ml-4 mr-0.5" />
               {issue?.milestone ? issue?.milestone.title : '未分类'}
               <Tag className="ml-4 mr-0.5" />

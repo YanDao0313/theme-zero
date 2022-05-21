@@ -21,6 +21,7 @@ export { ReactComponent as Scissors } from '@icons/scissors.svg'
 export { ReactComponent as Send } from '@icons/send.svg'
 export { ReactComponent as Code } from '@icons/code.svg'
 export { ReactComponent as Calendar } from '@icons/calendar.svg'
+export { ReactComponent as Eye } from '@icons/eye.svg'
 
 // cloud icon
 export { Thunder, Rain, Snow, Sun, Sunshine, Windy } from './Cloud'

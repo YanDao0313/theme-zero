@@ -23,6 +23,7 @@ const About: React.FC<AboutProps> = () => {
 
   useEffect(() => {
     handleQuery()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

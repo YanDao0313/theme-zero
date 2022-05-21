@@ -4,6 +4,10 @@ const config = {
     repository: 'blog',
     token: ['ghp_Vokc7d30ejgebjP', 'lTKwl2ScB1KMVnZ146OT2'],
   },
+  leancloud: {
+    appId: 'LjOwR4ELEqbauKvtQbwq5TUw-MdYXbMMI',
+    appKey: 'BOSFJ49ohbGctgn4zvJE9VN6',
+  },
   contact: {
     github: 'https://github.com/chanshiyucx',
     twitter: 'https://twitter.com/chanshiyucx',
