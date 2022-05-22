@@ -19,7 +19,7 @@
   @apply hover:-translate-y-1;
 }
 
-.nav svg {
+side .nav svg {
   @apply transform duration-300 hover:scale-110;
 }
 
