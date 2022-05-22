@@ -36,22 +36,22 @@ const Side: React.FC<SideProps> = () => {
       {/* side menu */}
       <div className="w-full h-2/3 flex justify-end pb-10">
         <nav className="nav nav-y flex flex-col justify-end items-center w-12">
-          <Link className={clsx(pathname === '/' && 'active')} to="/">
+          <Link className={clsx(pathname === '/' && 'active')} to="/" data-name="首页">
             <Villa />
           </Link>
-          <Link className={clsx(pathname === '/project' && 'active')} to="/project">
+          <Link className={clsx(pathname === '/project' && 'active')} to="/project" data-name="项目">
             <Inbox />
           </Link>
-          <Link className={clsx(pathname === '/book' && 'active')} to="/book">
+          <Link className={clsx(pathname === '/book' && 'active')} to="/book" data-name="书单">
             <Book />
           </Link>
-          <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration">
+          <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration" data-name="灵感">
             <Message />
           </Link>
-          <Link className={clsx(pathname === '/friend' && 'active')} to="/friend">
+          <Link className={clsx(pathname === '/friend' && 'active')} to="/friend" data-name="友邻">
             <Heart />
           </Link>
-          <Link className={clsx(pathname === '/about' && 'active')} to="/about">
+          <Link className={clsx(pathname === '/about' && 'active')} to="/about" data-name="关于">
             <User />
           </Link>
         </nav>

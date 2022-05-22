@@ -19,7 +19,7 @@
   color: var(--blue);
 }
 
-.nav svg {
+header svg {
   @apply mr-1;
 }
 

@@ -5,7 +5,7 @@ type ButterflyProps = {}
 
 const Butterfly: React.FC<ButterflyProps> = () => {
   return (
-    <div className="cursor-pointer flex items-center justify-center mx-2">
+    <div className="cursor-pointer flex items-center justify-center mx-3">
       <div className="butterfly"></div>
     </div>
   )
