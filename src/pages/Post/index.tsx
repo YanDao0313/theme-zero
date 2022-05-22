@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import clsx from 'clsx'
 import { Issue } from '@/type'
 import { queryIssue, increaseHot } from '@utils/service'
 import { formatIssue } from '@utils/format'
@@ -8,6 +9,7 @@ import Loading from '@components/Loading'
 import Markdown from '@/components/Markdown'
 import Comment from '@/components/Comment'
 import { Calendar, Bookmark, Tag, Eye } from '@components/Icons'
+import styles from './index.module.css'
 
 type PostParams = {
   num: string
@@ -52,16 +54,16 @@ const Post: React.FC<PostProps> = () => {
         <div className="fade">
           <div className="mt-4 mb-8">
             <h3 className="text-3xl lg:text-4xl mb-2">{issue?.title}</h3>
-            <div className="flex justify-start mt-2">
+            <div className={clsx('flex justify-start mt-2', styles.meta)}>
               <Calendar className="mr-0.5" />
               {issue?.created_at}
-              <Eye className="ml-4 mr-0.5" />
+              <Eye className="ml-1 sm:ml-4 mr-0.5" />
               {hot || 0}℃
-              <Bookmark className="ml-4 mr-0.5" />
+              <Bookmark className="ml-1 sm:ml-4 mr-0.5" />
               {issue?.milestone ? issue?.milestone.title : '未分类'}
-              <Tag className="ml-4 mr-0.5" />
+              <Tag className="ml-1 sm:ml-4 mr-0.5" />
               {issue?.labels.map((label) => (
-                <span className="mr-2" key={label.id}>
+                <span className="mr-1 sm:ml-2" key={label.id}>
                   {label.name}
                 </span>
               ))}

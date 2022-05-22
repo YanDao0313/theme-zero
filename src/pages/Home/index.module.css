@@ -18,3 +18,7 @@
 .home-md p {
   @apply mb-3;
 }
+
+.meta {
+  word-break: keep-all;
+}

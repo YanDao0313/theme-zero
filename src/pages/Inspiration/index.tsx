@@ -127,7 +127,7 @@ const Inspiration: React.FC<InspirationProps> = () => {
               return (
                 <article
                   key={issue.id}
-                  className="cursor-pointer p-4 tracking-wide"
+                  className="cursor-pointer sm:px-4 py-4 tracking-wide"
                   data-aos="fade-left"
                   onMouseOver={handleMask}
                   onMouseEnter={handleMask}

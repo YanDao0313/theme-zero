@@ -147,7 +147,7 @@ const Home: React.FC<HomeProps> = () => {
               return (
                 <article
                   key={issue.id}
-                  className="cursor-pointer p-4 tracking-wide"
+                  className="cursor-pointer sm:px-4 py-4 overflow-x-hidden tracking-wide"
                   data-aos="fade-left"
                   onClick={() => navigate(`/post/${issue.number}`)}
                   onMouseOver={handleMask}
@@ -155,16 +155,16 @@ const Home: React.FC<HomeProps> = () => {
                 >
                   <h3 className="text-xl italic mb-2">{issue.title}</h3>
                   <Markdown className={styles['home-md']} content={issue.description} />
-                  <div className="flex justify-start mt-2">
+                  <div className={clsx('flex justify-start mt-2 w-fit', styles.meta)}>
                     <Calendar className="mr-0.5" />
                     {issue.created_at}
-                    <Eye className="ml-4 mr-0.5" />
+                    <Eye className="ml-1 sm:ml-4 mr-0.5" />
                     {hot[issue.id] || 0}℃
-                    <Bookmark className="ml-4 mr-0.5" />
+                    <Bookmark className="ml-1 sm:ml-4 mr-0.5" />
                     {issue.milestone ? issue.milestone.title : '未分类'}
-                    <Tag className="ml-4 mr-0.5" />
+                    <Tag className="ml-1 sm:ml-4 mr-0.5" />
                     {issue.labels.map((label) => (
-                      <span className="mr-2" key={label.id}>
+                      <span className="mr-1 sm:ml-2" key={label.id}>
                         {label.name}
                       </span>
                     ))}
