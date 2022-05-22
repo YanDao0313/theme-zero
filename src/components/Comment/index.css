@@ -52,3 +52,7 @@
 .gt-container .gt-user .gt-ico svg {
   fill: var(--white);
 }
+
+.gt-container .gt-meta {
+  border: none;
+}
