@@ -31,7 +31,7 @@ const Book: React.FC<BookProps> = () => {
   return (
     <div className="page">
       {list.length ? (
-        <div className="fade select-text">
+        <div className="fade lg:mt-4">
           <div>
             {list.map((item) => {
               return (

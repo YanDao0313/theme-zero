@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = () => {
   }
 
   return (
-    <div className="header px-6 h-16 flex lg:hidden justify-between items-center shadow-sm">
+    <div className="header relative px-6 h-16 flex lg:hidden justify-between items-center shadow-sm z-10">
       <h3 className="title text-4xl tracking-wider">蟬時雨</h3>
 
       <nav className={clsx('nav hidden sm:flex items-center', open && 'nav-over')}>

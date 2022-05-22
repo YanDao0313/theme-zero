@@ -61,7 +61,8 @@ const Inspiration: React.FC<InspirationProps> = () => {
 
   const calcMaskPos = (target: any) => {
     const { clientHeight, offsetTop } = target
-    const realTop = offsetTop + 3 * 16 // 3rem padding
+    const paddingTop = document.documentElement.clientWidth > 1024 ? 3 * 16 : 2 * 16
+    const realTop = offsetTop + paddingTop
     if (maskHeight === clientHeight && maskTop === realTop) return
     setMaskHeight(clientHeight)
     setMaskTop(realTop)
@@ -109,7 +110,7 @@ const Inspiration: React.FC<InspirationProps> = () => {
       {issues.length === 0 ? (
         <Loading />
       ) : (
-        <div className="fade select-text">
+        <div className="fade">
           <div
             ref={maskRef}
             className={clsx(

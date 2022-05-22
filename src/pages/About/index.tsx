@@ -29,7 +29,7 @@ const About: React.FC<AboutProps> = () => {
   return (
     <div className="page">
       {issue ? (
-        <div className="fade select-text">
+        <div className="fade">
           <Markdown content={issue!.body} />
           <Comment title="关于" />
         </div>

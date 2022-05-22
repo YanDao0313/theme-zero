@@ -57,7 +57,7 @@
 
 /* custom page */
 .page {
-  @apply relative w-full min-h-screen lg:pt-12 pb-8 lg:pb-12 px-4 md:px-8 lg:pr-32 lg:pl-0 flex items-center;
+  @apply relative w-full min-h-screen pt-8 lg:pt-12 pb-8 lg:pb-12 px-4 md:px-8 lg:pr-32 lg:pl-0 flex items-center select-text;
 }
 
 /* link */
