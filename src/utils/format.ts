@@ -43,16 +43,3 @@ export const formatPage = (data: Issue): Array<CustomIssue> => {
 
   return result
 }
-
-/**
- * 图片 cdn 加速，时雨个人使用
- */
-const isMe = window.location.host.includes('chanshiyu.com')
-const GithubPrefix = 'raw.githubusercontent.com/chanshiyucx/yoi/master'
-const JSDriverPrefix = 'cdn.jsdelivr.net/gh/chanshiyucx/yoi@latest'
-export const fileCDN = (url: string) => {
-  if (isMe && url.includes(GithubPrefix)) {
-    return url.replace(GithubPrefix, JSDriverPrefix)
-  }
-  return url
-}
