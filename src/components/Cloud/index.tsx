@@ -5,20 +5,19 @@ import { queryCloud } from '@utils/service'
 type CloudProps = {}
 
 const renderCloudIcon = (code: string): React.ReactElement => {
-  const codeVal = ~~code
-  if (codeVal <= 3) {
+  if (code === 'qing') {
     // 晴
     return <Sunshine />
-  } else if (codeVal <= 9) {
+  } else if (code === 'yun' || code === 'yin' || code === 'wu') {
     // 多云
     return <Sun />
-  } else if (codeVal <= 12) {
+  } else if (code === 'lei') {
     // 阵雨
     return <Thunder />
-  } else if (codeVal <= 20) {
+  } else if (code === 'yu') {
     // 大雨
     return <Rain />
-  } else if (codeVal <= 25) {
+  } else if (code === 'xue') {
     // 雪
     return <Snow />
   } else {
@@ -29,17 +28,17 @@ const renderCloudIcon = (code: string): React.ReactElement => {
 
 const Cloud: React.FC<CloudProps> = () => {
   const [city, setCity] = useState('')
-  const [weather, setWeather] = useState('晴')
   const [temperature, setTemperature] = useState('26')
-  const [code, setCode] = useState('0')
+  const [weather, setWeather] = useState('晴')
+  const [code, setCode] = useState('qing')
 
   useEffect(() => {
     queryCloud().then((data) => {
-      const { now, location } = data
-      setCity(location.name)
-      setWeather(now.text)
-      setTemperature(now.temperature)
-      setCode(now.code)
+      const { city: cityName, wea, wea_img, tem } = data
+      setCity(cityName)
+      setTemperature(tem)
+      setWeather(wea)
+      setCode(wea_img)
     })
   }, [])
 

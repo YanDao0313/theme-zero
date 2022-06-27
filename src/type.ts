@@ -1,19 +1,21 @@
 export type Cloud = {
-  ip: string
-  location: {
-    id: string
-    name: string
-    country: string
-    path: string
-    timezone: string
-    timezone_offset: string
-  }
-  now: {
-    text: string
-    code: string
-    temperature: string
-  }
-  last_update: string
+  nums: number
+  cityid: string
+  city: string
+  date: string
+  week: string
+  update_time: string
+  wea: string
+  wea_img: 'xue' | 'lei' | 'shachen' | 'wu' | 'bingbao' | 'yun' | 'yu' | 'yin' | 'qing'
+  tem: string
+  tem_day: string
+  tem_night: string
+  win: string
+  win_speed: string
+  win_meter: string
+  air: string
+  pressure: string
+  humidity: string
 }
 
 export type Label = {
