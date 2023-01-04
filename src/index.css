@@ -17,8 +17,8 @@
     --orange: #ff6821;
     --scrollbar: #1c2838;
     --black: #1f2937;
-    --black-light: rgba(31, 41, 55, 0.6);
-    --black-lighter: rgba(31, 41, 55, 0.4);
+    --black-light: rgba(30, 40, 55, 0.6);
+    --black-lighter: rgba(30, 40, 55, 0.4);
   }
   body {
     font-family: 'Fira Mono', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

@@ -32,7 +32,7 @@ const ZeroRoutes = () => {
           <Route
             path={'/'}
             element={
-              <KeepAlive>
+              <KeepAlive cacheKey="Home">
                 <Home />
               </KeepAlive>
             }
