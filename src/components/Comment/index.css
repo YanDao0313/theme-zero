@@ -4,7 +4,7 @@
 .gt-container .gt-header-preview,
 .gt-container .gt-comment-content {
   max-height: 15rem;
-  background-color: var(--black-light);
+  background-color: var(--black-lighter);
 }
 
 .gt-container .gt-header-textarea,
@@ -27,7 +27,7 @@
 .gt-container .gt-comment-body,
 .gt-container .gt-header-textarea,
 .gt-container blockquote {
-  color: var(--white) !important;
+  color: var(--font-color) !important;
 }
 
 .gt-container .gt-popup,
@@ -36,6 +36,10 @@
   @apply rounded;
   background-color: var(--theme-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.gt-container .gt-popup {
+  background-color: var(--background-mask-color);
 }
 
 .gt-container a,
@@ -51,12 +55,14 @@
   background-color: var(--white);
 }
 
-.gt-container .gt-svg svg {
-  fill: var(--theme-color);
+.gt-container .gt-svg svg,
+.gt-container .gt-user .gt-ico svg,
+.gt-container .gt-user .is--poping .gt-ico svg {
+  fill: var(--font-color);
 }
 
-.gt-container .gt-user .gt-ico svg {
-  fill: var(--white);
+.gt-container .gt-ico-tip svg {
+  fill: var(--theme-color);
 }
 
 .gt-container .gt-meta {
@@ -66,4 +72,13 @@
 .gt-container blockquote:after,
 .gt-container blockquote:before {
   background-color: var(--white);
+}
+
+
+.gt-container .gt-popup .gt-action.is--active:before {
+  background-color: var(--theme-color);
+}
+
+.gt-container .gt-link {
+  border-bottom: 1px dotted var(--theme-color);
 }
