@@ -12,7 +12,7 @@ const config = {
     github: 'https://github.com/chanshiyucx',
     twitter: 'https://twitter.com/chanshiyucx',
     telegram: 'https://t.me/hutao777',
-    email: 'https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=tNnR9Nfc1drH3N3NwZrX29k',
+    email: 'mailto://me@chanshiyu.com',
     music: 'https://music.163.com/#/user/home?id=103060582',
     blog: 'https://chanshiyu.gitbook.io/blog',
   },
