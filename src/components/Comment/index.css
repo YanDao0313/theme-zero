@@ -4,7 +4,7 @@
 .gt-container .gt-header-preview,
 .gt-container .gt-comment-content {
   max-height: 15rem;
-  background-color: var(--black);
+  background-color: var(--black-light);
 }
 
 .gt-container .gt-header-textarea,
@@ -24,26 +24,31 @@
 .gt-header-preview,
 .gt-container a.is--active,
 .gt-container .gt-version,
-.gt-container .gt-comment-body {
-  color: var(--font-color) !important;
+.gt-container .gt-comment-body,
+.gt-container .gt-header-textarea,
+.gt-container blockquote {
+  color: var(--white) !important;
 }
 
 .gt-container .gt-popup,
-.gt-container .gt-btn {
+.gt-container .gt-btn,
+.gt-container .gt-btn-public:hover {
   @apply rounded;
   background-color: var(--theme-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .gt-container a,
+.gt-container a:hover,
 .gt-container .gt-comment-username,
 .gt-container .gt-header-controls-tip {
   color: var(--theme-color);
 }
 
 .gt-container .gt-btn-preview {
-  background-color: var(--white);
   border: none;
+  color: var(--theme-color);
+  background-color: var(--white);
 }
 
 .gt-container .gt-svg svg {
@@ -56,4 +61,9 @@
 
 .gt-container .gt-meta {
   border: none;
+}
+
+.gt-container blockquote:after,
+.gt-container blockquote:before {
+  background-color: var(--white);
 }
