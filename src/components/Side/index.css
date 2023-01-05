@@ -2,6 +2,10 @@
   width: 33.333333vw;
 }
 
+.head {
+  width: 70%;
+}
+
 .title,
 .subtitle {
   font-family: GuDianMingChaoTi;
@@ -24,7 +28,7 @@ side .nav svg {
 }
 
 .nav > a.active {
-  color: var(--blue);
+  color: var(--theme-color);
 }
 
 .nav a::after {

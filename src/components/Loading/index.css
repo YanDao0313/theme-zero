@@ -1,5 +1,5 @@
 .xp {
-  color: var(--orange);
+  color: var(--theme-color);
 }
 .box {
   display: inline-block;

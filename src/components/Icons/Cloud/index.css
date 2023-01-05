@@ -1,7 +1,7 @@
 .cloud {
   width: 2rem;
   height: 2rem;
-  fill: #fff;
+  fill: var(--font-color);
 }
 
 /* Thunder Bolt Animation */

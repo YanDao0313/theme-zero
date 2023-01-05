@@ -14,7 +14,7 @@
   height: 1rem;
   top: calc(50% - 0.5rem);
   border-radius: 50%;
-  background: var(--blue-light);
+  background: var(--theme-color);
   animation-duration: 3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;

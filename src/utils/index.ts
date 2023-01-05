@@ -43,7 +43,7 @@ export const getLocation = (href: string) => {
  * Nya
  */
 export const Nya = () => {
-  const labelStyle = 'line-height:22px;color:#E5E7EB;background:#1F2937;border-radius:3px;'
+  const labelStyle = 'line-height:22px;color:#FFF;background:#DB493C;border-radius:3px;'
   const site = 'https://chanshiyu.com'
   const themeRepo = 'https://github.com/chanshiyucx/zero'
   console.info(`%c 蝉时雨 %c`, labelStyle, '', site)

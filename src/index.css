@@ -10,19 +10,34 @@
 
 @layer components {
   :root {
-    --white: #e5e7eb;
-    --blue: #5f91ff;
-    --blue-light: #699bff;
-    --gray: #4b5563;
-    --orange: #ff6821;
-    --scrollbar: #1c2838;
-    --black: #1f2937;
-    --black-light: rgba(30, 40, 55, 0.6);
-    --black-lighter: rgba(30, 40, 55, 0.4);
+    --white: rgba(245, 245, 245, 1);
+    --white-light: rgba(245, 245, 245, 0.6);
+    --white-lighter: rgba(245, 245, 245, 0.1);
+    --black: rgba(0, 10, 20, 1);
+    --black-light: rgba(0, 10, 20, 0.6);
+    --black-lighter: rgba(0, 10, 20, 0.1);
+    --theme-color: #db493c;
   }
-  body {
+
+  .dark {
+    --font-color: var(--white);
+    --background-color: var(--black);
+    --background-mask-color: var(--black-light);
+  }
+
+  .light {
+    --font-color: var(--black);
+    --background-color: var(--white);
+    --background-mask-color: var(--white-light);
+  }
+
+  * {
     font-family: 'Fira Mono', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    color: var(--font-color);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -37,10 +52,16 @@
   ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
-    background-color: var(--scrollbar);
+    background-color: var(--background-color);
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 3px;
-    background-color: var(--gray);
+    background-color: var(--theme-color);
+  }
+
+  /* custom selection */
+  ::selection {
+    color: var(--white);
+    background-color: var(--theme-color);
   }
 }

@@ -25,19 +25,20 @@
 .gt-container a.is--active,
 .gt-container .gt-version,
 .gt-container .gt-comment-body {
-  color: var(--white) !important;
+  color: var(--font-color) !important;
 }
 
-.gt-container .gt-popup {
+.gt-container .gt-popup,
+.gt-container .gt-btn {
   @apply rounded;
-  background-color: var(--black);
+  background-color: var(--theme-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .gt-container a,
 .gt-container .gt-comment-username,
 .gt-container .gt-header-controls-tip {
-  color: var(--blue);
+  color: var(--theme-color);
 }
 
 .gt-container .gt-btn-preview {
@@ -46,7 +47,7 @@
 }
 
 .gt-container .gt-svg svg {
-  fill: var(--blue);
+  fill: var(--theme-color);
 }
 
 .gt-container .gt-user .gt-ico svg {

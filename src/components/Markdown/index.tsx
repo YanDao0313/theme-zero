@@ -16,7 +16,7 @@ type MarkdownProps = {
 }
 
 const zooming = new Zooming({
-  bgColor: 'var(--black)',
+  bgColor: 'var(--background-color)',
   enableGrab: false,
 })
 

@@ -8,7 +8,7 @@
 
 .heading span {
   @apply mr-2;
-  color: var(--blue-light);
+  color: var(--theme-color);
 }
 
 h1.heading {
@@ -32,15 +32,13 @@ h6.heading {
   @apply text-base;
 }
 
-.code,
-.inline-code {
-  @apply rounded shadow-inner;
-  background-color: var(--black-light) !important;
-}
-
 .inline-code {
   @apply py-0.5 px-1.5;
-  color: var(--blue-light);
+  color: var(--theme-color);
+}
+
+code pre {
+  background-color: var(--black-light) !important;
 }
 
 table {
@@ -50,15 +48,15 @@ table {
 td,
 th {
   @apply px-4 py-2;
-  border: 1px solid var(--white);
+  border: 1px solid var(--font-color);
 }
 
 blockquote {
-  @apply relative py-4 italic shadow-inner;
+  @apply relative py-4 italic;
 }
 
 blockquote p {
-  @apply px-8 py-2 rounded;
+  @apply px-8 py-2;
 }
 
 blockquote::before,
@@ -66,7 +64,7 @@ blockquote::after {
   @apply absolute w-6 h-6;
   content: '';
   position: absolute;
-  background-color: var(--white);
+  background-color: var(--font-color);
 }
 
 blockquote::before {

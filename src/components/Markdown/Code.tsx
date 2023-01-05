@@ -27,7 +27,7 @@ import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typesc
 import yaml from 'react-syntax-highlighter/dist/cjs/languages/prism/yaml'
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
-import dark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark'
+import dark from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula'
 
 const lang = {
   conf,
@@ -66,7 +66,7 @@ const Code: CodeComponent = ({ node, className, inline, children, ...props }) =>
       style={dark as any}
       language={match[1]}
       showLineNumbers={true}
-      showInlineLineNumbers={true}
+      showInlineLineNumbers={false}
       children={String(children).replace(/\n$/, '')}
       {...props}
     />
