@@ -16,7 +16,7 @@ const Loading: React.FC<LoadingProps> = () => {
           </p>
           <p className="leading-none text-xl">Professional</p>
         </div>
-        <div className="progress flex items-center m-auto w-52 h-4 rounded-lg border-solid border-2 border-gray-200 overflow-hidden">
+        <div className="progress flex items-center m-auto w-52 h-4 rounded-lg border-solid border-2 overflow-hidden">
           <div className="box"></div>
           <div className="box"></div>
           <div className="box"></div>

@@ -7,7 +7,7 @@
 }
 
 .heading span {
-  @apply mr-2;
+  @apply mr-2 text-base font-black;
   color: var(--theme-color);
 }
 
@@ -33,8 +33,14 @@ h6.heading {
 }
 
 .inline-code {
-  @apply py-0.5 px-1.5;
   color: var(--theme-color);
+}
+
+code pre::before {
+  @apply absolute top-0 right-0 uppercase text-base leading-4;
+  content: attr(data-language);
+  font-family: var(--font-family);
+  border-bottom: 2px solid currentColor;
 }
 
 table {

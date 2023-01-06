@@ -70,6 +70,7 @@ const Code: CodeComponent = ({ node, className, inline, children, ...props }) =>
       showLineNumbers={true}
       showInlineLineNumbers={false}
       children={String(children).replace(/\n$/, '')}
+      data-language={match[1]}
       {...props}
     />
   ) : (

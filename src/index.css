@@ -10,13 +10,15 @@
 
 @layer components {
   :root {
-    --white: rgba(245, 245, 245, 1);
-    --white-light: rgba(245, 245, 245, 0.6);
-    --white-lighter: rgba(245, 245, 245, 0.1);
-    --black: rgba(0, 10, 20, 1);
-    --black-light: rgba(0, 10, 20, 0.6);
-    --black-lighter: rgba(0, 10, 20, 0.1);
+    --white: rgba(240, 240, 240, 1);
+    --white-light: rgba(240, 240, 240, .8);
+    --white-lighter: rgba(240, 240, 240, 0.1);
+    --black: rgba(10, 20, 30, 1);
+    --black-light: rgba(10, 20, 30, .8);
+    --black-lighter: rgba(10, 20, 30, 0.1);
     --theme-color: #e06458;
+    --font-family: 'Fira Mono', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Helvetica Neue', sans-serif;
   }
 
   .dark {
@@ -32,8 +34,7 @@
   }
 
   * {
-    font-family: 'Fira Mono', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Helvetica Neue', sans-serif;
+    font-family: var(--font-family);
   }
 
   body {
@@ -52,7 +53,8 @@
   ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
-    background-color: var(--background-color);
+    border-radius: 3px;
+    background-color: var(--background-mask-color);
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 3px;

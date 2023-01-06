@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import clsx from 'clsx'
 import './index.css'
+import ShootingStar from '@components/ShootingStar'
 import Poetry from '@components/Poetry'
 import {
   Villa,
@@ -30,8 +31,10 @@ const Side: React.FC<SideProps> = () => {
 
   return (
     <div className="side fixed top-0 left-0 h-full overflow-hidden hidden lg:flex flex-col justify-between">
+      <ShootingStar />
+      
       {/* side menu */}
-      <div className="w-full h-2/3 flex justify-end pb-10">
+      <div className="w-full h-2/3 flex justify-end pb-20">
         <nav className="nav nav-y flex flex-col justify-end items-center w-12">
           <Link className={clsx(pathname === '/' && 'active')} to="/" data-name="首页">
             <Villa />

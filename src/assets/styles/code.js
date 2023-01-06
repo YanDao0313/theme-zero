@@ -97,10 +97,10 @@ export default {
     color: '#55c4fb',
   },
   'attr-value': {
-    color: '#db493c',
+    color: '#e06458',
   },
   attribute: {
-    color: '#db493c',
+    color: '#e06458',
   },
   boolean: {
     color: '#c792ea',
@@ -168,10 +168,10 @@ export default {
     color: '#55c4fb',
   },
   'pseudo-class': {
-    color: '#db493c',
+    color: '#e06458',
   },
   'pseudo-element': {
-    color: '#db493c',
+    color: '#e06458',
   },
   punctuation: {
     color: '#55c4fb',
@@ -183,7 +183,7 @@ export default {
     color: '#e06458',
   },
   string: {
-    color: '#db493c',
+    color: '#e06458',
   },
   symbol: {
     color: '#c792ea',
