@@ -25,9 +25,10 @@ import swift from 'react-syntax-highlighter/dist/cjs/languages/prism/swift'
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx'
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript'
 import yaml from 'react-syntax-highlighter/dist/cjs/languages/prism/yaml'
+import sql from 'react-syntax-highlighter/dist/cjs/languages/prism/sql'
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
-import theme from '@/assets/styles/material-light'
+import theme from '@/assets/styles/code'
 
 const lang = {
   conf,
@@ -54,6 +55,7 @@ const lang = {
   typescript,
   ts: typescript,
   yaml,
+  sql,
 }
 Object.entries(lang).map(([k, v]) => SyntaxHighlighter.registerLanguage(k, v))
 

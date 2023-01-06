@@ -6,7 +6,7 @@ export default {
     wordBreak: 'normal',
     wordWrap: 'normal',
     color: '#97acb7',
-    background: '#fafafa',
+    background: 'transparent',
     fontFamily: 'Roboto Mono, monospace',
     fontSize: '1em',
     lineHeight: '1.5em',
@@ -25,7 +25,7 @@ export default {
     wordBreak: 'normal',
     wordWrap: 'normal',
     color: '#97acb7',
-    background: '#fafafa',
+    background: 'transparent',
     fontFamily: 'Roboto Mono, monospace',
     fontSize: '1em',
     lineHeight: '1.5em',
@@ -38,8 +38,8 @@ export default {
     hyphens: 'none',
     overflow: 'auto',
     position: 'relative',
-    margin: '0.5em 0',
-    padding: '1.25em 1em',
+    margin: '0 0 1em',
+    padding: '1em 1em',
   },
   'code[class*="language-"]::-moz-selection': {
     background: '#cceae7',
@@ -127,13 +127,13 @@ export default {
     color: '#c792ea',
   },
   deleted: {
-    color: '#e53935',
+    color: '#e06458',
   },
   doctype: {
     color: '#97acb7',
   },
   entity: {
-    color: '#e53935',
+    color: '#e06458',
   },
   function: {
     color: '#c792ea',
@@ -180,7 +180,7 @@ export default {
     color: '#9adb3d',
   },
   selector: {
-    color: '#e53935',
+    color: '#e06458',
   },
   string: {
     color: '#db493c',
@@ -189,15 +189,15 @@ export default {
     color: '#c792ea',
   },
   tag: {
-    color: '#e53935',
+    color: '#e06458',
   },
   unit: {
     color: '#f76d47',
   },
   url: {
-    color: '#e53935',
+    color: '#e06458',
   },
   variable: {
-    color: '#e53935',
+    color: '#e06458',
   },
 }

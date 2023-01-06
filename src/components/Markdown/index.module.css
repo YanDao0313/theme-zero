@@ -37,10 +37,6 @@ h6.heading {
   color: var(--theme-color);
 }
 
-code * {
-  background-color: transparent !important;
-}
-
 table {
   @apply block my-6 max-w-full overflow-x-auto;
 }

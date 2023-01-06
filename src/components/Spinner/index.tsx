@@ -6,14 +6,14 @@ type GenshinProps = {}
 
 const Genshin: React.FC<GenshinProps> = () => {
   return (
-    <div className="flex justify-center items-center mt-28 mb-24">
-      <div className="spinner">
+    <span className="flex justify-center items-center mt-28 mb-24">
+      <span className="spinner">
         <img className="prospect" src={Loading} alt="Loading..."></img>
-        <div className="background">
+        <span className="background">
           <img src={Loading} alt="Loading..."></img>
-        </div>
-      </div>
-    </div>
+        </span>
+      </span>
+    </span>
   )
 }
 
