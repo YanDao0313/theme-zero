@@ -23,14 +23,14 @@ const Header: React.FC<HeaderProps> = () => {
         <Link className={clsx(pathname === '/' && 'active')} to="/">
           <Villa /> 首页
         </Link>
+        <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration">
+          <Message /> 灵感
+        </Link>
         <Link className={clsx(pathname === '/project' && 'active')} to="/project">
           <Inbox /> 项目
         </Link>
         <Link className={clsx(pathname === '/book' && 'active')} to="/book">
           <Book /> 书单
-        </Link>
-        <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration">
-          <Message /> 灵感
         </Link>
         <Link className={clsx(pathname === '/friend' && 'active')} to="/friend">
           <Heart /> 友邻

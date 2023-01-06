@@ -36,14 +36,14 @@ const Side: React.FC<SideProps> = () => {
           <Link className={clsx(pathname === '/' && 'active')} to="/" data-name="首页">
             <Villa />
           </Link>
+          <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration" data-name="灵感">
+            <Message />
+          </Link>
           <Link className={clsx(pathname === '/project' && 'active')} to="/project" data-name="项目">
             <Inbox />
           </Link>
           <Link className={clsx(pathname === '/book' && 'active')} to="/book" data-name="书单">
             <Book />
-          </Link>
-          <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration" data-name="灵感">
-            <Message />
           </Link>
           <Link className={clsx(pathname === '/friend' && 'active')} to="/friend" data-name="友邻">
             <Heart />

@@ -16,7 +16,7 @@
 }
 
 .home-md p {
-  @apply mb-3;
+  @apply mb-2;
 }
 
 .meta {
