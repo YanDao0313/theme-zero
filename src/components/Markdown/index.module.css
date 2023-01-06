@@ -37,8 +37,8 @@ h6.heading {
   color: var(--theme-color);
 }
 
-code pre {
-  background-color: var(--black-lighter) !important;
+code * {
+  background-color: transparent !important;
 }
 
 table {
