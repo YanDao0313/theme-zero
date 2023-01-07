@@ -8,7 +8,7 @@
   @apply fixed top-0 left-0 w-screen h-screen;
   content: '';
   z-index: -1;
-  opacity: 0.4;
+  opacity: 0.3;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -81,23 +81,8 @@
   @apply w-full;
 }
 
-.link::before {
-  @apply absolute top-0 left-0 py-0.5 px-1.5 z-10 text-sm break-normal whitespace-nowrap rounded shadow-inner
-  origin-bottom-left transform transition-all duration-500 opacity-0 scale-50 -translate-y-4;
-  content: attr(href);
-  color: var(--theme-color);
-  background-color: var(--background-color);
-}
 .link:hover::before {
   @apply opacity-100 scale-100 -translate-y-7;
-}
-
-.link-defalut {
-  color: var(--font-color);
-}
-
-.link-defalut:hover {
-  color: var(--theme-color);
 }
 
 .markdown-body-scrollable {

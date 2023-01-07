@@ -10,9 +10,9 @@
 
 @layer components {
   :root {
-    --white: rgba(240, 240, 240, 1);
-    --white-light: rgba(240, 240, 240, .8);
-    --white-lighter: rgba(240, 240, 240, 0.1);
+    --white: rgba(255, 255, 255, 1);
+    --white-light: rgba(255, 255, 255, .8);
+    --white-lighter: rgba(255, 255, 255, 0.1);
     --black: rgba(10, 20, 30, 1);
     --black-light: rgba(10, 20, 30, .8);
     --black-lighter: rgba(10, 20, 30, 0.1);

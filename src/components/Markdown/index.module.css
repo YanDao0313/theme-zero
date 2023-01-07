@@ -54,7 +54,7 @@ th {
 }
 
 blockquote {
-  @apply relative py-4 italic;
+  @apply relative mb-4 py-4 italic;
 }
 
 blockquote p {
