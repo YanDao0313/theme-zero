@@ -10,7 +10,7 @@ type CommentProps = {
 
 const Comment: React.FC<CommentProps> = ({ title }) => {
   useEffect(() => {
-    const id = window.location.hash.replace(/#/, "")    
+    const id = window.location.hash.replace(/#/, "")
     const gitalk = new Gitalk({ ...config.gitalk, title, id })
     gitalk.render('gitalk')
   }, [title])
