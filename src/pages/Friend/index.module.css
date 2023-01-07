@@ -1,3 +1,7 @@
+.info span {
+    @apply block leading-7;
+}
+
 .friends li {
     will-change: transform;
     border: 2px solid var(--font-color);

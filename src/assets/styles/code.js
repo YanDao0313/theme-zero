@@ -1,4 +1,4 @@
-export default {
+const theme = {
   'code[class*="language-"]': {
     textAlign: 'left',
     whiteSpace: 'pre',
@@ -201,3 +201,6 @@ export default {
     color: '#e06458',
   },
 }
+
+
+export default theme

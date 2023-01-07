@@ -33,6 +33,14 @@ const Friend: React.FC<FriendProps> = () => {
     <div className="page">
       {list.length ? (
         <div className="fade lg:mt-4">
+          <div className={clsx(styles.info, 'mx-4 mb-4')}>
+            <span>不如来我这儿喝杯茶？嘿~</span>
+            <span>★ Bio：蝉時雨</span>
+            <span>★ Motto：蝉鸣如雨，花宵道中</span>
+            <span>★ URL：https://chanshiyu.com</span>
+            <span>★ Avatar：<a className="link" href="https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/blog/iavatar.jpg" target="_blank" rel="noopener noreferrer">点击获取</a></span>
+            <span>※ 以下友链按博主互访频率排序，并根据个人对博客内容喜好加权，博主将不定期更新排序并过滤阵亡名单。</span>
+          </div>
           <ul className={clsx(styles.friends, 'm-0 grid grid-cols-3 sm:grid-cols-4 xl:grid-cols-5')}>
             {list.map((item) => {
               return (

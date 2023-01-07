@@ -18,7 +18,7 @@ const config = {
   },
   gitalk: {
     clientID: '864b1c2cbc4e4aad9ed8',
-    clientSecret: '6ca16373efa03347e11a96ff92e355c5cea189bb',
+    clientSecret: '288ee5039cf42253b83b5c40cf0cf38770f3213a',
     repo: 'comment',
     owner: 'chanshiyucx',
     admin: ['chanshiyucx'],
