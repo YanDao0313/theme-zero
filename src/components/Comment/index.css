@@ -4,7 +4,7 @@
 .gt-container .gt-header-preview,
 .gt-container .gt-comment-content {
   max-height: 15rem;
-  background-color: var(--black-lighter);
+  background-color: transparent;
 }
 
 .gt-container .gt-header-textarea,
@@ -71,7 +71,7 @@
 
 .gt-container blockquote:after,
 .gt-container blockquote:before {
-  background-color: var(--white);
+  background-color: var(--font-color);
 }
 
 
