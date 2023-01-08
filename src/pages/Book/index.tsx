@@ -6,7 +6,6 @@ import { formatPage } from '@/utils/format'
 import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
 import Comment from '@/components/Comment'
-import { External } from '@components/Icons'
 import styles from './index.module.css'
 
 type BookProps = {}
