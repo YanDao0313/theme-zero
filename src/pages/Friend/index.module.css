@@ -1,24 +1,24 @@
-.info span {
-    @apply block leading-7;
+.info p {
+  @apply block leading-7;
 }
 
 .friends li {
-    will-change: transform;
-    border: 2px solid var(--font-color);
+  will-change: transform;
+  border: 2px solid var(--font-color);
 }
 
 .friends li img {
-    transform: translateX(40%);
-    opacity: .2;
+  transform: translateX(40%);
+  opacity: .2;
 }
 
 .friends li:hover {
-    color: var(--theme-color);
-    border-color: var(--theme-color);
-    box-shadow: 0 10px 15px -3px var(--black-lighter),0 4px 6px -4px var(--black-lighter)
+  color: var(--theme-color);
+  border-color: var(--theme-color);
+  box-shadow: 0 10px 15px -3px var(--black-lighter),0 4px 6px -4px var(--black-lighter);
 }
 
 .friends li:hover img {
-    opacity: .5;
+  opacity: .5;
 }
 
