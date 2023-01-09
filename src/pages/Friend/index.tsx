@@ -38,17 +38,34 @@ const Friend: React.FC<FriendProps> = () => {
             <p>★ Bio：蝉時雨</p>
             <p>★ Motto：蝉鸣如雨，花宵道中</p>
             <p>★ URL：https://chanshiyu.com</p>
-            <p>★ Avatar：<a className="link" href="https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/blog/iavatar.jpg" target="_blank" rel="noopener noreferrer">点击获取</a></p>
+            <p>
+              ★ Avatar：
+              <a
+                className="link"
+                href="https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/blog/iavatar.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                点击获取
+              </a>
+            </p>
             <p>※ 以下友链按博主互访频率排序，并根据个人对博客内容喜好加权，博主将不定期更新排序并过滤阵亡名单。</p>
           </div>
           <ul className={clsx(styles.friends, 'm-0 grid grid-cols-3 sm:grid-cols-4 xl:grid-cols-5')}>
             {list.map((item) => {
               return (
-                <li key={item.name} className="relative inline-block m-2 text-center overflow-hidden transform duration-300 hover:-translate-y-1">
+                <li
+                  key={item.name}
+                  className="relative inline-block m-2 text-center overflow-hidden transform duration-300 hover:-translate-y-1"
+                >
                   <a href={item.link} className="block py-4 w-full h-full" target="_blank" rel="noopener noreferrer">
                     {item.name}
                   </a>
-                  <img className="absolute top-0 right-0 h-full rounded-full transform duration-300" src={item.avatar} alt={item.name} />
+                  <img
+                    className="absolute top-0 right-0 h-full rounded-full transform duration-300"
+                    src={item.avatar}
+                    alt={item.name}
+                  />
                 </li>
               )
             })}

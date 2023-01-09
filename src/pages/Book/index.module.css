@@ -1,4 +1,4 @@
-.book  {
+.book {
   will-change: transform;
   border: 2px solid var(--font-color);
 }
@@ -12,15 +12,16 @@
 }
 
 .book:hover h3 {
-  color: var(--theme-color)
+  color: var(--theme-color);
 }
 
-.book h3, .info p {
+.book h3,
+.info p {
   @apply overflow-hidden text-ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
-}  
+}
 
 .info p {
   @apply leading-6;
@@ -37,22 +38,22 @@
   perspective: 600px;
 }
 
-.cover > :first-child {
+.cover > img {
   @apply absolute top-0 left-0 w-full h-full;
-  transform: translateZ(.75rem);
+  transform: translateZ(0.75rem);
   border-radius: 0 2px 2px 0;
-  box-shadow: 5px 5px 20px var(--black-light);
+  box-shadow: 3px 3px 16px var(--black-light);
 }
 
-.cover::after {
+.cover::before {
   @apply absolute top-0 left-0 w-full h-full;
   content: ' ';
-  transform: translateZ(-.75rem);
+  transform: translateZ(-0.75rem);
   border-radius: 0 2px 2px 0;
   background-color: var(--black-light);
 }
 
-.cover::before {
+.cover::after {
   @apply absolute top-0.5 left-0;
   content: ' ';
   width: 1.5rem;
@@ -60,4 +61,3 @@
   transform: translateX(5.25rem) rotateY(90deg);
   background-color: var(--white);
 }
-  

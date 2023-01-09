@@ -36,30 +36,36 @@ const Book: React.FC<BookProps> = () => {
           <div className="grid grid-cols-1 xl:grid-cols-2">
             {list.map((item) => {
               return (
-                <div key={item.name} className={clsx(styles.book, 'm-2 p-3 transform duration-300 hover:-translate-y-1')}>
+                <div
+                  key={item.name}
+                  className={clsx(styles.book, 'm-2 p-3 transform duration-300 hover:-translate-y-1')}
+                >
                   <div className="flex">
                     <div className={clsx(styles.cover, 'relative mr-3 mb-4')}>
                       <img src={item.cover} alt={item.name} />
                     </div>
                     <div className={styles.info}>
                       <h3 className="text-lg mb-1 transform duration-300">
-                        <a href={item.link} target="_blank" rel="noreferrer noopener">{ item.name }</a>
+                        <a href={item.link} target="_blank" rel="noreferrer noopener">
+                          {item.name}
+                        </a>
                       </h3>
-                      <p>作者：{ item.author }</p>
-                      <p>出版时间：{ item.published }</p>
-                      <p>阅读进度：{ item.progress }</p>
+                      <p>作者：{item.author}</p>
+                      <p>出版时间：{item.published}</p>
+                      <p>阅读进度：{item.progress}</p>
                       <p>
                         读书笔记：
-                          {item.postLink 
-                            ? <a href={item.postLink} target="_blank" rel="noopener noreferrer">
-                                { item.postTitle }
-                              </a> 
-                            : <>暂无</>
-                          }
+                        {item.postLink ? (
+                          <a href={item.postLink} target="_blank" rel="noopener noreferrer">
+                            {item.postTitle}
+                          </a>
+                        ) : (
+                          <>暂无</>
+                        )}
                       </p>
                     </div>
                   </div>
-                  <p className="text-justify">{ item.description }</p>
+                  <p className="text-justify">{item.description}</p>
                 </div>
               )
             })}
