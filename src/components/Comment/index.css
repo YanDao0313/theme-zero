@@ -69,11 +69,14 @@
   border: none;
 }
 
+.gt-container blockquote {
+  @apply px-0 py-4 !important;
+}
+
 .gt-container blockquote:after,
 .gt-container blockquote:before {
   background-color: var(--font-color);
 }
-
 
 .gt-container .gt-popup .gt-action.is--active:before {
   background-color: var(--theme-color);
@@ -81,4 +84,56 @@
 
 .gt-container .gt-link {
   border-bottom: 1px dotted var(--theme-color);
+}
+
+.gt-container pre {
+  background-color: var(--background-mask-color) !important;
+}
+
+/* Custom Code Highlight */
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #55c4fb;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #c792ea;
+}
+
+.markdown-body .pl-smi,
+.markdown-body .pl-s .pl-s1 {
+  color: inherit;
+}
+
+.markdown-body .pl-s,
+.markdown-body .pl-pds,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-sr .pl-sra {
+  color: #e06458;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #55c4fb;
+}
+
+.markdown-body .pl-mi {
+  color: inherit;
+}
+
+.markdown-body .pl-mb {
+  color: inherit;
+}
+
+.markdown-body .pl-mdr {
+  color: #c792ea;
+}
+
+.markdown-body .pl-corl {
+  color: #e06458;
 }

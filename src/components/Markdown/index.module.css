@@ -54,11 +54,12 @@ th {
 }
 
 blockquote {
-  @apply relative mb-4 py-4 italic;
+  @apply relative mb-4 py-6 italic;
 }
 
-blockquote p {
-  @apply px-8 py-2;
+blockquote > p,
+blockquote > div {
+  @apply px-10;
 }
 
 blockquote::before,
