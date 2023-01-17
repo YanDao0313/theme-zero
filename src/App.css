@@ -24,6 +24,7 @@
     background-size: contain;
     background-position: bottom right;
     background-color: #fff;
+    background-image: unset;
   }
 }
 
