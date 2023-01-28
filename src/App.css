@@ -1,29 +1,15 @@
 .app {
-  @apply min-h-screen overflow-x-hidden tracking-wide bg-no-repeat bg-fixed;
+  @apply min-h-screen overflow-x-hidden tracking-wide bg-fixed bg-center bg-cover bg-no-repeat;
   padding-left: 33.333333vw;
-  background-color: var(--background-mask-color);
-}
-
-.app::before {
-  @apply fixed top-0 left-0 w-screen h-screen;
-  content: '';
-  z-index: -1;
-  opacity: 0.4;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  --transparent: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==);
   background-color: var(--background-color);
-  background-image: url('./assets/images/background.jpg');
+  background-image: cross-fade(var(--transparent), url('./assets/images/background.jpg'), 10%);
+  background-image: -webkit-cross-fade(var(--transparent), url('./assets/images/background.jpg'), 10%);
 }
 
 @media (max-width: 1024px) {
   .app {
     padding-left: 0;
-  }
-  .app::before {
-    background-size: contain;
-    background-position: bottom right;
-    background-color: #fff;
     background-image: unset;
   }
 }

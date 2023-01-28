@@ -39,7 +39,7 @@
 }
 
 .gt-container .gt-popup {
-  background-color: var(--background-mask-color);
+  background-color: var(--background-color);
 }
 
 .gt-container a,
@@ -87,7 +87,7 @@
 }
 
 .gt-container pre {
-  background-color: var(--background-mask-color) !important;
+  background-color: var(--background-color) !important;
 }
 
 /* Custom Code Highlight */
