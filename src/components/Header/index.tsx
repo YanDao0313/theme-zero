@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import clsx from 'clsx'
 import './index.css'
-import { Villa, Inbox, Book, Message, Heart, User } from '@components/Icons'
+import { Home, Inbox, Book, Message, Heart, User } from '@components/Icons'
 
 type HeaderProps = {}
 
@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = () => {
 
       <nav className={clsx('nav hidden sm:flex items-center', open && 'nav-over')}>
         <Link className={clsx(pathname === '/' && 'active')} to="/">
-          <Villa /> 首页
+          <Home /> 首页
         </Link>
         <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration">
           <Message /> 灵感
@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = () => {
           <Heart /> 友邻
         </Link>
         <Link className={clsx(pathname === '/about' && 'active')} to="/about">
-          <User /> 关于
+          <User /> 自述
         </Link>
       </nav>
 

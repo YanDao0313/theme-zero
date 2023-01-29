@@ -1,5 +1,5 @@
 // svg icon
-export { ReactComponent as Villa } from '@icons/villa.svg'
+export { ReactComponent as Home } from '@icons/home.svg'
 export { ReactComponent as Inbox } from '@icons/inbox.svg'
 export { ReactComponent as Bookmark } from '@icons/bookmark.svg'
 export { ReactComponent as Tag } from '@icons/tag.svg'

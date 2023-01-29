@@ -5,7 +5,7 @@ import './index.css'
 import ShootingStar from '@components/ShootingStar'
 import Poetry from '@components/Poetry'
 import {
-  Villa,
+  Home,
   Inbox,
   Book,
   Message,
@@ -37,7 +37,7 @@ const Side: React.FC<SideProps> = () => {
       <div className="pb-20 w-full h-2/3 flex justify-end z-10">
         <nav className="nav nav-y flex flex-col justify-end items-center w-12">
           <Link className={clsx(pathname === '/' && 'active')} to="/" data-name="首页">
-            <Villa />
+            <Home />
           </Link>
           <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration" data-name="灵感">
             <Message />
@@ -51,7 +51,7 @@ const Side: React.FC<SideProps> = () => {
           <Link className={clsx(pathname === '/friend' && 'active')} to="/friend" data-name="友邻">
             <Heart />
           </Link>
-          <Link className={clsx(pathname === '/about' && 'active')} to="/about" data-name="关于">
+          <Link className={clsx(pathname === '/about' && 'active')} to="/about" data-name="自述">
             <User />
           </Link>
         </nav>
