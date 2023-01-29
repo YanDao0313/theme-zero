@@ -13,9 +13,9 @@
     --white: rgba(255, 255, 255, 1);
     --white-light: rgba(255, 255, 255, 0.8);
     --white-lighter: rgba(255, 255, 255, 0.1);
-    --black: rgba(10, 20, 30, 1);
-    --black-light: rgba(10, 20, 30, 0.8);
-    --black-lighter: rgba(10, 20, 30, 0.1);
+    --black: rgba(0, 30, 60, 1);
+    --black-light: rgba(0, 30, 60, 0.8);
+    --black-lighter: rgba(0, 30, 60, 0.1);
     --theme-color: #e06458;
     --font-family: 'Fira Mono', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Helvetica Neue', sans-serif;
