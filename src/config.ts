@@ -2,7 +2,7 @@ const config = {
   github: {
     username: 'chanshiyucx',
     repository: 'blog',
-    token: ['ghp_Vokc7d30ejgebjP', 'lTKwl2ScB1KMVnZ146OT2'],
+    token: ['ghp_GVv1ylf0v2zNK9gr', 'OU3LD9UTc2h4Hk2I0pO4'],
   },
   leancloud: {
     appId: 'LjOwR4ELEqbauKvtQbwq5TUw-MdYXbMMI',
