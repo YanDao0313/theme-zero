@@ -7,6 +7,7 @@ const config = {
   leancloud: {
     appId: 'LjOwR4ELEqbauKvtQbwq5TUw-MdYXbMMI',
     appKey: 'BOSFJ49ohbGctgn4zvJE9VN6',
+    serverURL: 'https://api.chanshiyu.com',
   },
   contact: {
     github: 'https://github.com/chanshiyucx',
