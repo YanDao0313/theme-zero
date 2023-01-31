@@ -15,7 +15,7 @@
 .friends li:hover {
   color: var(--theme-color);
   border-color: var(--theme-color);
-  box-shadow: 0 10px 15px -3px var(--black-lighter), 0 4px 6px -4px var(--black-lighter);
+  box-shadow: 0 10px 15px -3px var(--black-light), 0 4px 6px -4px var(--black-light);
 }
 
 .friends li:hover img {

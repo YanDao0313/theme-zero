@@ -1,7 +1,7 @@
 .mask {
   @apply shadow-inner;
   will-change: height;
-  background-color: var(--black-lighter);
+  background-color: var(--mask-color);
 }
 .mask:before {
   content: '';

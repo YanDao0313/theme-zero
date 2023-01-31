@@ -64,7 +64,9 @@ const Side: React.FC<SideProps> = () => {
 
       {/* footer menu */}
       <div className="flex justify-end py-12">
-        <Butterfly />
+        <div className="mode" data-name="梦☪醒">
+          <Butterfly />
+        </div>
         <div className="nav nav-x flex items-center w-2/3 h-12 ">
           <a href={github} rel="noopener noreferrer" target="_blank">
             <Github />

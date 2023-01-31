@@ -22,9 +22,14 @@ export const useLoading = (duration: number = 1000) => {
 /**
  * 本地缓存
  */
-export const useLocalStorage = <T>(key: string, initialValue: T): [T, (value: T | ((val: T) => T)) => void] => {
+export const useLocalStorage = <T>(key: string, initialValue: T, expire: number): [T, (value: T) => void] => {
+  const expireKey = `${key}-expire`
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
+      const expireDate = window.localStorage.getItem(expireKey)
+      if (expireDate && Date.now() > Number(expireDate)) {
+        return initialValue
+      }
       const item = window.localStorage.getItem(key)
       return item ? JSON.parse(item) : initialValue
     } catch (error) {
@@ -33,11 +38,14 @@ export const useLocalStorage = <T>(key: string, initialValue: T): [T, (value: T 
     }
   })
 
-  const setValue = (value: T | ((val: T) => T)) => {
+  const setValue = (value: T) => {
     try {
-      const valueToStore = value instanceof Function ? value(storedValue) : value
-      setStoredValue(valueToStore)
-      window.localStorage.setItem(key, JSON.stringify(valueToStore))
+      setStoredValue(value)
+      window.localStorage.setItem(key, JSON.stringify(value))
+      if (expire) {
+        const expireDate = String(Date.now() + expire)
+        window.localStorage.setItem(expireKey, expireDate)
+      }
     } catch (error) {
       console.log(error)
     }
