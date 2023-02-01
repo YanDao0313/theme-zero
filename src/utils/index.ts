@@ -40,6 +40,20 @@ export const getLocation = (href: string) => {
 }
 
 /**
+ * 图片 cdn 加速【時雨自用】
+ */
+const isMe = window.location.host.includes('chanshiyu.com')
+const GithubHost = 'raw.githubusercontent.com'
+const FileRepo = 'https://chanshiyu.com/blog/IMAGES/'
+export const fileCDN = (src: string) => {
+  if (isMe && src.includes(GithubHost)) {
+    const filePath = src.split('/master/')[1].replace(/^IMAGES\//, '')
+    return `${FileRepo}${filePath}`
+  }
+  return src
+}
+
+/**
  * Nya
  */
 export const Nya = () => {

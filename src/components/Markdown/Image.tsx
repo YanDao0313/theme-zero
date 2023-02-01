@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ComponentPropsWithoutRef, ComponentType, ReactMarkdownProps } from 'react-markdown/lib/ast-to-react'
 import clsx from 'clsx'
 import Spinner from '@/components/Spinner'
+import { fileCDN } from '@/utils'
 import { useLoading } from '@/utils/hook'
 
 type ImageProps = ComponentPropsWithoutRef<'img'> & ReactMarkdownProps
@@ -18,7 +19,7 @@ const Image: ImageComponent = ({ src = '', alt = '' }) => {
       await delay()
       setloading(false)
     }
-    img.src = src
+    img.src = fileCDN(src)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [src])
 
