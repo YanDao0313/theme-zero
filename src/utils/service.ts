@@ -75,9 +75,9 @@ export const queryHot = async (ids: Array<number>): Promise<any> => {
     query.containedIn('id', ids)
     query
       .find()
-      .then((res) => {
+      .then((res:any) => {
         const hot: Hot = {}
-        res.forEach((o) => {
+        res.forEach((o:any) => {
           const attributes = o.toJSON()
           hot[attributes['id']] = attributes['time']
         })
@@ -95,7 +95,7 @@ export const increaseHot = (id: number, title: string): Promise<any> => {
     query.equalTo('id', id)
     query
       .find()
-      .then((res) => {
+      .then((res:any) => {
         if (res.length > 0) {
           // 已存在则返回热度
           const counter = res[0] as any
@@ -132,7 +132,7 @@ export const visitorStatistics = async (referrer: string): Promise<void> => {
     query.equalTo('referrer', referrer)
     query
       .first()
-      .then((res) => {
+      .then((res:any) => {
         if (res) {
           res
             // @ts-ignore
