@@ -1,5 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { ComponentPropsWithoutRef, ComponentType, ReactMarkdownProps } from 'react-markdown/lib/ast-to-react'
+import clsx from 'clsx'
 import Spinner from '@/components/Spinner'
 import { fileCDN } from '@/utils'
 import { useLoading } from '@/utils/hook'
@@ -25,7 +26,8 @@ const Image: ImageComponent = ({ src = '', alt = '' }) => {
 
   return (
     <>
-      {loading ? <Spinner /> : <img className="img-zoomable m-auto fade rounded shadow-md" src={cdnSrc} alt={alt} />}
+      <img className={clsx('img-zoomable m-auto fade rounded shadow-md', loading && 'hidden')} src={loading ? "" : cdnSrc} alt={alt} />
+      {loading && <Spinner />}
       {alt && <span className="block mt-2 text-center italic">◭ {alt}</span>}
     </>
   )
