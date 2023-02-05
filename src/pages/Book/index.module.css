@@ -43,6 +43,7 @@
   transform: translateZ(0.75rem);
   border-radius: 0 2px 2px 0;
   box-shadow: 3px 3px 16px var(--black);
+  background-color: var(--black);
 }
 
 .cover::before {
