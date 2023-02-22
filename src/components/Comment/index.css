@@ -72,12 +72,17 @@
 }
 
 .gt-container blockquote {
-  @apply px-0 py-4 !important;
+  @apply mb-2 px-0 py-6;
+  border-color: var(--mask-color);
 }
 
 .gt-container blockquote:after,
 .gt-container blockquote:before {
   background-color: var(--font-color);
+}
+
+.gt-container blockquote > blockquote {
+  @apply ml-10;
 }
 
 .gt-container .gt-popup .gt-action.is--active:before {
@@ -90,6 +95,10 @@
 
 .gt-container pre {
   background-color: var(--background-color) !important;
+}
+
+.gt-container .gt-spinner::before {
+  border-top-color: var(--theme-color);
 }
 
 /* Custom Code Highlight */
