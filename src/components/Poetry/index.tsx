@@ -7,7 +7,7 @@ type PoetryProps = {}
 const Poetry: React.FC<PoetryProps> = () => {
   useEffect(() => {
     const poetry = data.map((o) => o.poetry)
-    const typed: any = new Typed('.poetry', {
+    const typed = new Typed('.poetry', {
       strings: poetry,
       typeSpeed: 60,
       backSpeed: 60,

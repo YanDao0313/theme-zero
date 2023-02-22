@@ -20,3 +20,7 @@ git commit -m 'deploy'
 git push -f git@github.com:chanshiyucx/chanshiyucx.github.io.git master
 
 cd -
+
+
+
+
