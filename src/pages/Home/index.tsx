@@ -18,7 +18,7 @@ const Home: React.FC<HomeProps> = () => {
   const navigate = useNavigate()
   const loading = useLoading()
   const [page, setPage] = useState(1)
-  const [issues, setIssues] = useState<Array<Issue>>([])
+  const [issues, setIssues] = useState<Issue[]>([])
   const [hot, setHot] = useState<Hot>({})
   const maskRef = useRef<HTMLDivElement>(null)
   const listRef = useRef<HTMLDivElement>(null)

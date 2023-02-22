@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import clsx from 'clsx'
-import './index.css'
+import { useLocalStorage } from '@/utils/hook'
 import ShootingStar from '@components/ShootingStar'
+import Panel from '@components/Panel'
 import Poetry from '@components/Poetry'
+import { ThemeType } from '@/type'
+import './index.css'
 import {
   Home,
   Inbox,
@@ -26,12 +29,27 @@ const { github, twitter, telegram, email, music, blog } = config.contact
 type SideProps = {}
 
 const Side: React.FC<SideProps> = () => {
+  const [showPanel, setShowPanel] = useState(false)
   const location = useLocation()
   const pathname = location.pathname
+  const togglePanle = () => setShowPanel((c) => !c)
+
+  // 主题过期时间为1天，到期重置
+  const [theme, setTheme] = useLocalStorage<ThemeType>('theme', 'Hutao', 24 * 60 * 60 * 1000)
+
+  const toggleTheme = (theme: ThemeType) => {
+    console.log('theme---', theme)
+    setTheme(theme)
+  }
+
+  useLayoutEffect(() => {
+    document.getElementsByTagName('body')[0].className = theme
+  }, [theme])
 
   return (
     <div className="side fixed top-0 left-0 h-full overflow-hidden hidden lg:flex flex-col justify-between">
       <ShootingStar />
+      {showPanel && <Panel toggleTheme={toggleTheme} theme={theme} />}
 
       {/* side menu */}
       <div className="pb-20 w-full h-2/3 flex justify-end z-10">
@@ -64,7 +82,7 @@ const Side: React.FC<SideProps> = () => {
 
       {/* footer menu */}
       <div className="flex justify-end py-12">
-        <div className="mode" data-name="梦☪醒">
+        <div className="translate-y-3" onClick={togglePanle}>
           <Butterfly />
         </div>
         <div className="nav nav-x flex items-center w-2/3 h-12 ">

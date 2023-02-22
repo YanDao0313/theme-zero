@@ -12,7 +12,7 @@ type FriendProps = {}
 
 const Friend: React.FC<FriendProps> = () => {
   const loading = useLoading()
-  const [list, setList] = useState<Array<CustomIssue>>([])
+  const [list, setList] = useState<CustomIssue[]>([])
 
   const handleQuery = () => {
     queryIssueByLabel('Friend')

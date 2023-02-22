@@ -11,7 +11,7 @@ type ProjectProps = {}
 
 const Project: React.FC<ProjectProps> = () => {
   const loading = useLoading()
-  const [list, setList] = useState<Array<CustomIssue>>([])
+  const [list, setList] = useState<CustomIssue[]>([])
 
   const handleQuery = () => {
     queryIssueByLabel('Project')

@@ -46,7 +46,7 @@ export type Issue = {
   created_at: string
   updated_at: string
   milestone: Milestone
-  labels: Array<Label>
+  labels: Label[]
 }
 
 export type QueryParams = {
@@ -64,4 +64,11 @@ export type CustomIssue = {
 
 export type Hot = {
   [key: number]: number
+}
+
+export type ThemeType = 'Hutao' | 'Keqing' | 'Ganyu' | 'Kokomi' | 'Yoimiya' | 'Ayaka' | 'Nilou'
+
+export type Theme = {
+  type: ThemeType
+  name: string
 }

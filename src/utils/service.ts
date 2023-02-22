@@ -33,7 +33,7 @@ export const queryIssues = async ({
   pageSize = 10,
   state = 'open',
   filter = '',
-}: QueryParams): Promise<Array<Issue>> => {
+}: QueryParams): Promise<Issue[]> => {
   const api = `${blog}/issues?state=${state}&page=${page}&per_page=${pageSize}${filter}`
   return githubQuery(api)
 }
@@ -43,14 +43,14 @@ export const queryIssue = async (number: string): Promise<Issue> => {
   return githubQuery(api)
 }
 
-export const queryIssueByLabel = async (label: IssueLabel): Promise<Array<Issue>> => {
+export const queryIssueByLabel = async (label: IssueLabel): Promise<Issue[]> => {
   const api = `${blog}/issues?state=closed&labels=${label}`
   return githubQuery(api)
 }
 
-export const queryArchive = async (page: number = 1): Promise<Array<Issue>> => queryIssues({ page, state: 'open' })
+export const queryArchive = async (page: number = 1): Promise<Issue[]> => queryIssues({ page, state: 'open' })
 
-export const queryInspiration = async (page: number = 1): Promise<Array<Issue>> =>
+export const queryInspiration = async (page: number = 1): Promise<Issue[]> =>
   queryIssues({ page, state: 'closed', filter: '&labels=inspiration' })
 
 export const queryCloud = async (): Promise<Cloud> => {
@@ -68,16 +68,16 @@ export const queryCloud = async (): Promise<Cloud> => {
   }
 }
 
-export const queryHot = async (ids: Array<number>): Promise<any> => {
+export const queryHot = async (ids: number[]): Promise<any> => {
   return new Promise((resolve) => {
     if (isDev) return resolve([])
     const query = new AV.Query('Counter')
     query.containedIn('id', ids)
     query
       .find()
-      .then((res:any) => {
+      .then((res: any) => {
         const hot: Hot = {}
-        res.forEach((o:any) => {
+        res.forEach((o: any) => {
           const attributes = o.toJSON()
           hot[attributes['id']] = attributes['time']
         })
@@ -95,7 +95,7 @@ export const increaseHot = (id: number, title: string): Promise<any> => {
     query.equalTo('id', id)
     query
       .find()
-      .then((res:any) => {
+      .then((res: any) => {
         if (res.length > 0) {
           // 已存在则返回热度
           const counter = res[0] as any
@@ -132,7 +132,7 @@ export const visitorStatistics = async (referrer: string): Promise<void> => {
     query.equalTo('referrer', referrer)
     query
       .first()
-      .then((res:any) => {
+      .then((res: any) => {
         if (res) {
           res
             // @ts-ignore

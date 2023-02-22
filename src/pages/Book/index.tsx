@@ -12,7 +12,7 @@ type BookProps = {}
 
 const Book: React.FC<BookProps> = () => {
   const loading = useLoading()
-  const [list, setList] = useState<Array<CustomIssue>>([])
+  const [list, setList] = useState<CustomIssue[]>([])
 
   const handleQuery = () => {
     queryIssueByLabel('Book')

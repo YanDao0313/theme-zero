@@ -22,7 +22,7 @@ export const formatIssue = (issue: Issue): Issue => {
 /**
  * 格式化书单 & 友链
  */
-export const formatPage = (data: Issue): Array<CustomIssue> => {
+export const formatPage = (data: Issue): CustomIssue[] => {
   if (!data || !data.body) return []
   const section = data.body.split('## ').filter((o) => o.length)
   const result = section.map((o) => {

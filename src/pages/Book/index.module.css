@@ -4,7 +4,7 @@
 }
 
 .book:hover {
-  box-shadow: 0 10px 15px -3px var(--black-light), 0 4px 6px -4px var(--black-light);
+  box-shadow: 0 10px 15px -3px var(--mask-color), 0 4px 6px -4px var(--mask-color);
 }
 
 .book:hover .cover {
@@ -42,8 +42,8 @@
   @apply absolute top-0 left-0 w-full h-full;
   transform: translateZ(0.75rem);
   border-radius: 0 2px 2px 0;
-  box-shadow: 3px 3px 16px var(--black);
-  background-color: var(--black);
+  box-shadow: 3px 3px 16px var(--font-color);
+  background-color: var(--font-color);
 }
 
 .cover::before {
@@ -51,7 +51,7 @@
   content: ' ';
   transform: translateZ(-0.75rem);
   border-radius: 0 2px 2px 0;
-  background-color: var(--black);
+  background-color: var(--font-color);
 }
 
 .cover::after {
@@ -60,5 +60,5 @@
   width: 1.5rem;
   height: 8.1rem;
   transform: translateX(5.25rem) rotateY(90deg);
-  background-color: var(--white);
+  background-color: var(--background-color);
 }

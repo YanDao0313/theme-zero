@@ -15,7 +15,7 @@ type InspirationProps = {}
 const Inspiration: React.FC<InspirationProps> = () => {
   const loading = useLoading()
   const [page, setPage] = useState(1)
-  const [issues, setIssues] = useState<Array<Issue>>([])
+  const [issues, setIssues] = useState<Issue[]>([])
   const maskRef = useRef<HTMLDivElement>(null)
   const listRef = useRef<HTMLDivElement>(null)
   const hoverRef = useRef<any>(null)
