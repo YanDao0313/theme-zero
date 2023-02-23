@@ -1,10 +1,16 @@
 .app {
-  @apply min-h-screen overflow-x-hidden tracking-wide bg-fixed bg-center bg-cover bg-no-repeat;
+  @apply min-h-screen overflow-x-hidden tracking-wide;
   padding-left: 33.333333vw;
-  --transparent: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==);
   background-color: var(--background-color);
-  background-image: cross-fade(var(--transparent), var(--background-image), 10%);
-  background-image: -webkit-cross-fade(var(--transparent), var(--background-image), 10%);
+}
+
+.app::before {
+  @apply fixed top-0 left-0 w-screen h-screen bg-fixed bg-center bg-cover bg-no-repeat;
+  content: '';
+  z-index: -1;
+  opacity: 0.1;
+  background-image: var(--background-image);
+  transition: background-image 1s;
 }
 
 @media (max-width: 1024px) {

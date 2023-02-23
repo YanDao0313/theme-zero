@@ -5,7 +5,6 @@
 .mask,
 .main {
   @apply absolute inset-0;
-  /* background: #fff; */
 }
 
 .main {
@@ -72,7 +71,7 @@
   pointer-events: all;
   width: 37.5rem;
   background: #fff;
-  box-shadow: var(--mask-color) 0 0 1.25rem;
+  box-shadow: var(--background-color) 0 0 1.25rem;
   transform: translate(-50%, -50%);
 }
 
@@ -82,12 +81,12 @@
   line-height: 3.125rem;
   box-sizing: border-box;
   border-radius: 0.75rem 0.75rem 0 0;
-  border-bottom: 1px solid var(--mask-color);
+  border-bottom: 1px solid var(--background-color);
   background-color: var(--background-color);
 }
 
 .body {
-  @apply relative m-0 w-full flex flex-wrap list-none;
+  @apply relative m-0 py-4 w-full flex flex-wrap list-none;
   height: 16.25rem;
 }
 
@@ -103,7 +102,7 @@
   @apply relative w-full;
   height: 3.125rem;
   border-radius: 0 0 0.75rem 0.75rem;
-  border-top: 1px solid var(--mask-color);
+  border-top: 1px solid var(--background-color);
   background-color: var(--background-color);
 }
 

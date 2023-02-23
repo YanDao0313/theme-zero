@@ -69,11 +69,12 @@
 
 .gt-container .gt-meta {
   border: none;
+  z-index: unset;
 }
 
 .gt-container blockquote {
   @apply mb-2 px-0 py-6;
-  border-color: var(--mask-color);
+  border-color: var(--background-color);
 }
 
 .gt-container blockquote:after,

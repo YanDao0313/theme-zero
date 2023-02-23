@@ -12,34 +12,56 @@
   :root {
     --font-family: 'Fira Mono', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Helvetica Neue', sans-serif;
-    --font-color: rgba(85, 66, 54, 1);
+    --font-color: #444;
     scrollbar-gutter: stable;
   }
 
   .Hutao {
-    --theme-color: #e06458;
-    --mask-color: rgba(85, 66, 54, 0.1);
-    --background-color: rgba(252, 250, 242, 1);
-    --background-image: url('./assets/images/background.jpg');
+    --theme-color: #903f36;
+    --background-color: rgba(144, 63, 54, 0.1);
+    --background-image: url('./assets/images/hutao.jpg');
   }
 
   .Keqing {
-    --theme-color: #584d8d;
-    --mask-color: rgba(72, 34, 93, 0.1);
-    --background-color: rgba(72, 34, 93, 0.1);
-    --background-image: url('./assets/images/1.jpg');
+    --theme-color: #8d83a3;
+    --background-color: rgba(141, 131, 163, 0.1);
+    --background-image: url('./assets/images/keqing.jpg');
   }
 
   .Ganyu {
-    --theme-color: #f60;
-    --background-image: url('./assets/images/2.jpg');
+    --theme-color: #5d6eb0;
+    --background-color: rgba(93, 110, 176, 0.1);
+    --background-image: url('./assets/images/ganyu.jpg');
+  }
+
+  .Beelzebul {
+    --theme-color: #57428b;
+    --background-color: rgba(87, 66, 139, 0.1);
+    --background-image: url('./assets/images/beelzebul.jpg');
+  }
+
+  .Ayaka {
+    --theme-color: #889dc0;
+    --background-color: rgba(136, 157, 192, 0.1);
+    --background-image: url('./assets/images/ayaka.jpg');
+  }
+
+  .Yoimiya {
+    --theme-color: #b04233;
+    --background-color: rgba(176, 66, 51, 0.1);
+    --background-image: url('./assets/images/yoimiya.jpg');
   }
 
   .Kokomi {
-    --theme-color: #ded2e0;
-    --mask-color: rgba(222, 210, 224, 0.1);
-    --background-color: rgba(222, 210, 224, 0.1);
-    --background-image: url('./assets/images/3.jpg');
+    --theme-color: #bf9997;
+    --background-color: rgba(191, 153, 151, 0.1);
+    --background-image: url('./assets/images/kokomi.jpg');
+  }
+
+  .Nahida {
+    --theme-color: #6d775c;
+    --background-color: rgba(109, 119, 92, 0.1);
+    --background-image: url('./assets/images/nahida.jpg');
   }
 
   * {
@@ -71,7 +93,7 @@
 
   /* custom selection */
   ::selection {
-    color: var(--background-color);
-    background-color: var(--theme-color);
+    color: var(--theme-color);
+    background-color: var(--background-color);
   }
 }

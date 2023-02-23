@@ -4,7 +4,7 @@
 }
 
 .book:hover {
-  box-shadow: 0 10px 15px -3px var(--mask-color), 0 4px 6px -4px var(--mask-color);
+  box-shadow: 0 10px 15px -3px var(--background-color), 0 4px 6px -4px var(--background-color);
 }
 
 .book:hover .cover {

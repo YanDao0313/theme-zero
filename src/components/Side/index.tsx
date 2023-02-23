@@ -33,24 +33,28 @@ const list: Theme[] = [
   { type: 'Hutao', name: '雪霁梅香' },
   { type: 'Keqing', name: '霆霓快雨' },
   { type: 'Ganyu', name: '循循守月' },
-  { type: 'Kokomi', name: '真珠之智' },
-  { type: 'Yoimiya', name: '琉焰华舞' },
+  { type: 'Beelzebul', name: '一心净土' },
   { type: 'Ayaka', name: '白鹭霜华' },
-  { type: 'Nilou', name: '莲光落舞筵' },
+  { type: 'Yoimiya', name: '琉焰华舞' },
+  { type: 'Kokomi', name: '真珠之智' },
+  { type: 'Nahida', name: '白草净华' },
 ]
 const randomTheme = list[random(0, list.length)]
 
 const Side: React.FC<SideProps> = () => {
   const [showPanel, setShowPanel] = useState(false)
+  const [lastUpdateAt, setLastUpdateAt] = useState(Date.now())
   const location = useLocation()
   const pathname = location.pathname
-  // const togglePanle = () => setShowPanel((c) => !c)
-  const togglePanle = () => setShowPanel(false)
+  const togglePanle = () => setShowPanel((c) => !c)
 
   // 主题过期时间为1天，到期重置
   const [theme, setTheme] = useLocalStorage<ThemeType>('theme', randomTheme.type, 24 * 60 * 60 * 1000)
 
   const toggleTheme = (theme: ThemeType) => {
+    const now = Date.now()
+    if (now - lastUpdateAt < 1000) return
+    setLastUpdateAt(now)
     setTheme(theme)
   }
 
@@ -64,7 +68,7 @@ const Side: React.FC<SideProps> = () => {
       {showPanel && <Panel list={list} theme={theme} toggleTheme={toggleTheme} togglePanle={togglePanle} />}
 
       {/* side menu */}
-      <div className="pb-20 w-full h-2/3 flex justify-end z-10">
+      <div className="w-full h-1/2 flex justify-end z-10">
         <nav className="nav nav-y flex flex-col justify-end items-center w-12">
           <Link className={clsx(pathname === '/' && 'active')} to="/" data-name="首页">
             <Home />
