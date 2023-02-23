@@ -12,22 +12,34 @@
   :root {
     --font-family: 'Fira Mono', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Helvetica Neue', sans-serif;
+    --font-color: rgba(85, 66, 54, 1);
     scrollbar-gutter: stable;
   }
 
   .Hutao {
     --theme-color: #e06458;
-    --font-color: rgba(85, 66, 54, 1);
     --mask-color: rgba(85, 66, 54, 0.1);
     --background-color: rgba(252, 250, 242, 1);
+    --background-image: url('./assets/images/background.jpg');
   }
 
   .Keqing {
-    --theme-color: #fcc;
+    --theme-color: #584d8d;
+    --mask-color: rgba(72, 34, 93, 0.1);
+    --background-color: rgba(72, 34, 93, 0.1);
+    --background-image: url('./assets/images/1.jpg');
   }
 
   .Ganyu {
     --theme-color: #f60;
+    --background-image: url('./assets/images/2.jpg');
+  }
+
+  .Kokomi {
+    --theme-color: #ded2e0;
+    --mask-color: rgba(222, 210, 224, 0.1);
+    --background-color: rgba(222, 210, 224, 0.1);
+    --background-image: url('./assets/images/3.jpg');
   }
 
   * {

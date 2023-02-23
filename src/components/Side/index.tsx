@@ -1,11 +1,12 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import clsx from 'clsx'
+import { random } from '@/utils'
 import { useLocalStorage } from '@/utils/hook'
 import ShootingStar from '@components/ShootingStar'
 import Panel from '@components/Panel'
 import Poetry from '@components/Poetry'
-import { ThemeType } from '@/type'
+import { Theme, ThemeType } from '@/type'
 import './index.css'
 import {
   Home,
@@ -28,6 +29,17 @@ const { github, twitter, telegram, email, music, blog } = config.contact
 
 type SideProps = {}
 
+const list: Theme[] = [
+  { type: 'Hutao', name: '雪霁梅香' },
+  { type: 'Keqing', name: '霆霓快雨' },
+  { type: 'Ganyu', name: '循循守月' },
+  { type: 'Kokomi', name: '真珠之智' },
+  { type: 'Yoimiya', name: '琉焰华舞' },
+  { type: 'Ayaka', name: '白鹭霜华' },
+  { type: 'Nilou', name: '莲光落舞筵' },
+]
+const randomTheme = list[random(0, list.length)]
+
 const Side: React.FC<SideProps> = () => {
   const [showPanel, setShowPanel] = useState(false)
   const location = useLocation()
@@ -35,10 +47,9 @@ const Side: React.FC<SideProps> = () => {
   const togglePanle = () => setShowPanel((c) => !c)
 
   // 主题过期时间为1天，到期重置
-  const [theme, setTheme] = useLocalStorage<ThemeType>('theme', 'Hutao', 24 * 60 * 60 * 1000)
+  const [theme, setTheme] = useLocalStorage<ThemeType>('theme', randomTheme.type, 24 * 60 * 60 * 1000)
 
   const toggleTheme = (theme: ThemeType) => {
-    console.log('theme---', theme)
     setTheme(theme)
   }
 
@@ -49,7 +60,7 @@ const Side: React.FC<SideProps> = () => {
   return (
     <div className="side fixed top-0 left-0 h-full overflow-hidden hidden lg:flex flex-col justify-between">
       <ShootingStar />
-      {showPanel && <Panel toggleTheme={toggleTheme} theme={theme} />}
+      {showPanel && <Panel list={list} theme={theme} toggleTheme={toggleTheme} togglePanle={togglePanle} />}
 
       {/* side menu */}
       <div className="pb-20 w-full h-2/3 flex justify-end z-10">

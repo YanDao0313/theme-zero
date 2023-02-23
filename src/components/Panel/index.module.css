@@ -5,7 +5,7 @@
 .mask,
 .main {
   @apply absolute inset-0;
-  background: #fff;
+  /* background: #fff; */
 }
 
 .main {
@@ -34,7 +34,7 @@
 .long-line div {
   @apply absolute;
   width: 2px;
-  height: 150%;
+  height: 200%;
   background-color: var(--theme-color);
 }
 
