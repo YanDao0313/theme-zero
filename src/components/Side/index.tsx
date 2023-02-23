@@ -44,7 +44,8 @@ const Side: React.FC<SideProps> = () => {
   const [showPanel, setShowPanel] = useState(false)
   const location = useLocation()
   const pathname = location.pathname
-  const togglePanle = () => setShowPanel((c) => !c)
+  // const togglePanle = () => setShowPanel((c) => !c)
+  const togglePanle = () => setShowPanel(false)
 
   // 主题过期时间为1天，到期重置
   const [theme, setTheme] = useLocalStorage<ThemeType>('theme', randomTheme.type, 24 * 60 * 60 * 1000)
