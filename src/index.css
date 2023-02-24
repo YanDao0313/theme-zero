@@ -16,12 +16,6 @@
     scrollbar-gutter: stable;
   }
 
-  .Nahida {
-    --theme-color: #6d775c;
-    --background-color: rgba(109, 119, 92, 0.1);
-    --background-image: url('./assets/images/nahida.jpg');
-  }
-
   * {
     font-family: var(--font-family);
   }

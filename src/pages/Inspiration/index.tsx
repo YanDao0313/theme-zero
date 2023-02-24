@@ -60,6 +60,9 @@ const Inspiration: React.FC<InspirationProps> = () => {
   }, [page])
 
   const calcMaskPos = (target: any) => {
+    if (!hoverRef.current) {
+      hoverRef.current = target
+    }
     const { clientHeight, offsetTop } = target
     const paddingTop = document.documentElement.clientWidth > 1024 ? 3 * 16 : 2 * 16
     const realTop = offsetTop + paddingTop
@@ -74,7 +77,7 @@ const Inspiration: React.FC<InspirationProps> = () => {
     calcMaskPos(e.currentTarget)
   }
 
-  const handleScroll = () => {
+  const handleScrollAndResize = () => {
     clearTimeout(timerRef.current)
     timerRef.current = window.setTimeout(() => {
       if (hoverRef.current) {
@@ -100,8 +103,12 @@ const Inspiration: React.FC<InspirationProps> = () => {
       offset: 50,
     })
 
-    window.addEventListener('scroll', handleScroll, false)
-    return () => window.removeEventListener('scroll', handleScroll, false)
+    window.addEventListener('scroll', handleScrollAndResize, false)
+    window.addEventListener('resize', handleScrollAndResize, false)
+    return () => {
+      window.removeEventListener('scroll', handleScrollAndResize, false)
+      window.removeEventListener('resize', handleScrollAndResize, false)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -115,7 +122,7 @@ const Inspiration: React.FC<InspirationProps> = () => {
             ref={maskRef}
             className={clsx(
               styles.mask,
-              'pointer-events-none absolute top-0 left-0 w-full rounded transform transition-all ease-in-out duration-300',
+              'pointer-events-none absolute top-0 left-0 w-full lg:rounded transform transition-all ease-in-out duration-300',
             )}
             style={{
               height: `${maskHeight}px`,
