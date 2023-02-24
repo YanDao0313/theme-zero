@@ -86,12 +86,19 @@
 }
 
 .body {
-  @apply relative m-0 py-4 w-full flex flex-wrap list-none;
+  @apply relative m-0 py-4 px-10 w-full flex flex-wrap list-none;
   height: 16.25rem;
 }
 
 .body li {
-  @apply flex items-center justify-center w-1/2;
+  @apply flex items-center justify-center w-1/2 tracking-wider;
+}
+
+.body li span {
+  @apply inline-block px-3 py-1.5;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 1rem;
 }
 
 .body li.active {

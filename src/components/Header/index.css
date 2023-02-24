@@ -19,12 +19,13 @@ header svg {
 }
 
 .nav-over {
-  @apply absolute top-20 right-4 p-3 flex flex-col rounded shadow-sm z-10;
-  background-color: var(--background-color);
+  @apply absolute top-20 right-4 p-1 flex flex-col rounded shadow-sm z-10;
+  background-color: white;
 }
 
 .nav-over a {
-  @apply py-3;
+  @apply px-4 py-3;
+  background-color: var(--background-color);
 }
 
 .nav-over svg {

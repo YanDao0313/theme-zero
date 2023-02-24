@@ -16,48 +16,6 @@
     scrollbar-gutter: stable;
   }
 
-  .Hutao {
-    --theme-color: #903f36;
-    --background-color: rgba(144, 63, 54, 0.1);
-    --background-image: url('./assets/images/hutao.jpg');
-  }
-
-  .Keqing {
-    --theme-color: #8d83a3;
-    --background-color: rgba(141, 131, 163, 0.1);
-    --background-image: url('./assets/images/keqing.jpg');
-  }
-
-  .Ganyu {
-    --theme-color: #5d6eb0;
-    --background-color: rgba(93, 110, 176, 0.1);
-    --background-image: url('./assets/images/ganyu.jpg');
-  }
-
-  .Beelzebul {
-    --theme-color: #57428b;
-    --background-color: rgba(87, 66, 139, 0.1);
-    --background-image: url('./assets/images/beelzebul.jpg');
-  }
-
-  .Ayaka {
-    --theme-color: #889dc0;
-    --background-color: rgba(136, 157, 192, 0.1);
-    --background-image: url('./assets/images/ayaka.jpg');
-  }
-
-  .Yoimiya {
-    --theme-color: #b04233;
-    --background-color: rgba(176, 66, 51, 0.1);
-    --background-image: url('./assets/images/yoimiya.jpg');
-  }
-
-  .Kokomi {
-    --theme-color: #bf9997;
-    --background-color: rgba(191, 153, 151, 0.1);
-    --background-image: url('./assets/images/kokomi.jpg');
-  }
-
   .Nahida {
     --theme-color: #6d775c;
     --background-color: rgba(109, 119, 92, 0.1);

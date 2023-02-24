@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import clsx from 'clsx'
+import color from 'color'
 import { random } from '@/utils'
 import { useLocalStorage } from '@/utils/hook'
 import ShootingStar from '@components/ShootingStar'
@@ -24,20 +25,28 @@ import {
   Butterfly,
 } from '@components/Icons'
 import config from '@/config'
+import Hutao from '@/assets/images/hutao.jpg'
+import Keqing from '@/assets/images/keqing.jpg'
+import Ganyu from '@/assets/images/ganyu.jpg'
+import Beelzebul from '@/assets/images/beelzebul.jpg'
+import Ayaka from '@/assets/images/ayaka.jpg'
+import Yoimiya from '@/assets/images/yoimiya.jpg'
+import Kokomi from '@/assets/images/kokomi.jpg'
+import Nahida from '@/assets/images/nahida.jpg'
 
 const { github, twitter, telegram, email, music, blog } = config.contact
 
 type SideProps = {}
 
 const list: Theme[] = [
-  { type: 'Hutao', name: '雪霁梅香' },
-  { type: 'Keqing', name: '霆霓快雨' },
-  { type: 'Ganyu', name: '循循守月' },
-  { type: 'Beelzebul', name: '一心净土' },
-  { type: 'Ayaka', name: '白鹭霜华' },
-  { type: 'Yoimiya', name: '琉焰华舞' },
-  { type: 'Kokomi', name: '真珠之智' },
-  { type: 'Nahida', name: '白草净华' },
+  { type: 'Hutao', name: '雪霁梅香', color: '#903f36', image: Hutao },
+  { type: 'Keqing', name: '霆霓快雨', color: '#8d83a3', image: Keqing },
+  { type: 'Ganyu', name: '循循守月', color: '#5d6eb0', image: Ganyu },
+  { type: 'Beelzebul', name: '一心净土', color: '#57428b', image: Beelzebul },
+  { type: 'Ayaka', name: '白鹭霜华', color: '#889dc0', image: Ayaka },
+  { type: 'Yoimiya', name: '琉焰华舞', color: '#b04233', image: Yoimiya },
+  { type: 'Kokomi', name: '真珠之智', color: '#bf9997', image: Kokomi },
+  { type: 'Nahida', name: '白草净华', color: '#6d775c', image: Nahida },
 ]
 const randomTheme = list[random(0, list.length)]
 
@@ -59,6 +68,10 @@ const Side: React.FC<SideProps> = () => {
   }
 
   useLayoutEffect(() => {
+    const t = list.find((e) => e.type === theme)!
+    document.documentElement.style.setProperty('--theme-color', t.color)
+    document.documentElement.style.setProperty('--background-color', color(t.color).alpha(0.1).string())
+    document.documentElement.style.setProperty('--background-image', `url('${t.image}')`)
     document.getElementsByTagName('body')[0].className = theme
   }, [theme])
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
+import color from 'color'
 import { Theme, ThemeType } from '@/type'
 import styles from './index.module.css'
 
@@ -30,7 +31,14 @@ const Panel: React.FC<PanelProps> = ({ list, theme, togglePanle, toggleTheme }) 
                     className={clsx('cursor-pointer', theme === t.type && styles.active)}
                     onClick={() => toggleTheme(t.type)}
                   >
-                    {t.name}
+                    <span
+                      style={{
+                        borderColor: t.color,
+                        backgroundColor: theme === t.type ? color(t.color).alpha(0.5).string() : 'transparent',
+                      }}
+                    >
+                      {t.name}
+                    </span>
                   </li>
                 )
               })}
