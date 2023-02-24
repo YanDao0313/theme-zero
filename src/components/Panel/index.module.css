@@ -113,6 +113,34 @@
   background-color: var(--background-color);
 }
 
+.like {
+  @apply absolute bottom-0 left-1/2 overflow-hidden cursor-pointer rounded-full;
+  width: 18.75rem;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  background-color: white;
+  box-shadow: var(--background-color) 0 0 1rem;
+  transform: translate(-50%, 50%);
+  transition: all 0.5s cubic-bezier(0.86, -0.02, 0.08, 1.02) 0s;
+}
+.like:hover::before {
+  transform: translateX(0);
+}
+.like::before,
+.like::after {
+  @apply block absolute inset-0 rounded-full;
+  content: '';
+}
+.like::before {
+  background-color: var(--background-color);
+  transform: translateX(-100%);
+  transition: all 0.5s cubic-bezier(0.86, -0.02, 0.08, 1.02) 0s;
+}
+.like::after {
+  content: attr(data-title);
+  background-color: var(--background-color);
+}
+
 /* 面板下落动画 */
 @keyframes dropDown {
   0% {

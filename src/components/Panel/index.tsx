@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import color from 'color'
 import { Theme, ThemeType } from '@/type'
+import { queryLike } from '@utils/service'
+import { useLocalStorage } from '@/utils/hook'
 import styles from './index.module.css'
 
 type PanelProps = {
@@ -12,6 +14,25 @@ type PanelProps = {
 }
 
 const Panel: React.FC<PanelProps> = ({ list, theme, togglePanle, toggleTheme }) => {
+  const [likeCount, setLikeCount] = useState(0)
+  const [likeSite, setLikeSite] = useLocalStorage<boolean>('like', false)
+
+  const handleLike = () => {
+    if (likeSite) return
+    queryLike().then((data) => {
+      setLikeCount(data)
+      setLikeSite(true)
+    })
+  }
+
+  useEffect(() => {
+    queryLike('getTimes').then((data) => {
+      setLikeCount(data)
+    })
+  }, [])
+
+  const likeContent = likeSite ? `${likeCount} 位旅行者见证故事的发芽` : `${likeCount} 位旅行者带来故事的种子`
+
   return (
     <div className={styles.panel}>
       <div className={styles.mask} onClick={togglePanle}></div>
@@ -43,7 +64,9 @@ const Panel: React.FC<PanelProps> = ({ list, theme, togglePanle, toggleTheme }) 
                 )
               })}
             </ul>
-            <div className={styles.foot}></div>
+            <div className={styles.foot}>
+              <div className={styles.like} data-title={likeContent} onClick={handleLike}></div>
+            </div>
           </div>
           <div className={styles['long-line']}>
             <div></div>

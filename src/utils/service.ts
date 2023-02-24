@@ -102,7 +102,7 @@ export const increaseHot = (id: number, title: string): Promise<any> => {
           counter
             .increment('time', 1)
             .save(null, { fetchWhenSave: true })
-            .then((counter: { get: (arg0: string) => any }) => {
+            .then((counter: any) => {
               const time = counter.get('time')
               resolve(time)
             })
@@ -147,6 +147,40 @@ export const visitorStatistics = async (referrer: string): Promise<void> => {
           newVisitor
             .save()
             .then(() => resolve())
+            .catch(console.error)
+        }
+      })
+      .catch(console.error)
+  }).catch(console.error)
+}
+
+export const queryLike = async (type?: string): Promise<any> => {
+  return new Promise((resolve) => {
+    if (isDev) return resolve(0)
+    const query = new AV.Query('Counter')
+    const Counter = AV.Object.extend('Counter')
+    query.equalTo('title', 'site')
+    query
+      .first()
+      .then((res: any) => {
+        if (res) {
+          if (type === 'getTimes') {
+            resolve(res.get('time'))
+          } else {
+            res
+              .increment('time', 1)
+              .save(null, { fetchWhenSave: true })
+              .then((counter: any) => resolve(counter.get('time')))
+              .catch(console.error)
+          }
+        } else {
+          const newcounter = new Counter()
+          newcounter.set('title', 'site')
+          newcounter.set('time', 1)
+          newcounter.set('site', window.location.href)
+          newcounter
+            .save()
+            .then((counter: any) => resolve(counter.get('time')))
             .catch(console.error)
         }
       })

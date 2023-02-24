@@ -39,14 +39,14 @@ const { github, twitter, telegram, email, music, blog } = config.contact
 type SideProps = {}
 
 const list: Theme[] = [
-  { type: 'Hutao', name: '雪霁梅香', color: '#903f36', image: Hutao },
-  { type: 'Keqing', name: '霆霓快雨', color: '#8d83a3', image: Keqing },
-  { type: 'Ganyu', name: '循循守月', color: '#5d6eb0', image: Ganyu },
-  { type: 'Beelzebul', name: '一心净土', color: '#57428b', image: Beelzebul },
-  { type: 'Ayaka', name: '白鹭霜华', color: '#889dc0', image: Ayaka },
-  { type: 'Yoimiya', name: '琉焰华舞', color: '#b04233', image: Yoimiya },
-  { type: 'Kokomi', name: '真珠之智', color: '#bf9997', image: Kokomi },
-  { type: 'Nahida', name: '白草净华', color: '#6d775c', image: Nahida },
+  { type: 'Hutao', name: '雪霁梅香', color: '#903F36', image: Hutao },
+  { type: 'Keqing', name: '霆霓快雨', color: '#8D83A3', image: Keqing },
+  { type: 'Ganyu', name: '循循守月', color: '#5260A6', image: Ganyu },
+  { type: 'Beelzebul', name: '一心净土', color: '#9F87C2', image: Beelzebul },
+  { type: 'Ayaka', name: '白鹭霜华', color: '#7A8FB7', image: Ayaka },
+  { type: 'Yoimiya', name: '琉焰华舞', color: '#BC5039', image: Yoimiya },
+  { type: 'Kokomi', name: '真珠之智', color: '#BF9997', image: Kokomi },
+  { type: 'Nahida', name: '白草净华', color: '#9DBB92', image: Nahida },
 ]
 const randomTheme = list[random(0, list.length)]
 
@@ -54,15 +54,25 @@ const Side: React.FC<SideProps> = () => {
   const location = useLocation()
   const pathname = location.pathname
   const [showPanel, setShowPanel] = useState(false)
+  const [isLoad, setIsLoad] = useState(false)
   const [theme, setTheme] = useLocalStorage<ThemeType>('theme', randomTheme.type, 24 * 60 * 60 * 1000)
 
   const toggleTheme = (theme: ThemeType) => setTheme(theme)
-  const togglePanle = () => setShowPanel((c) => !c)
+  const togglePanle = () => {
+    if (!isLoad) {
+      setIsLoad(true)
+      list.forEach((e) => {
+        const img = new Image()
+        img.src = e.image
+      })
+    }
+    setShowPanel((c) => !c)
+  }
 
   useLayoutEffect(() => {
     const t = list.find((e) => e.type === theme)!
     document.documentElement.style.setProperty('--theme-color', t.color)
-    document.documentElement.style.setProperty('--background-color', color(t.color).alpha(0.14).string())
+    document.documentElement.style.setProperty('--background-color', color(t.color).alpha(0.2).string())
     document.documentElement.style.setProperty('--background-image', `url('${t.image}')`)
     document.getElementsByTagName('body')[0].className = theme
   }, [theme])
@@ -103,7 +113,7 @@ const Side: React.FC<SideProps> = () => {
 
       {/* footer menu */}
       <div className="flex justify-end py-12">
-        <div className="translate-y-3" onClick={togglePanle}>
+        <div className="nya" data-name="時与风" onClick={togglePanle}>
           <Butterfly />
         </div>
         <div className="nav nav-x flex items-center w-2/3 h-12 ">
