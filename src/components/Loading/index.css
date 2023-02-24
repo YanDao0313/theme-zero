@@ -6,7 +6,7 @@
   margin-right: 2px;
   width: 0.625rem;
   height: 80%;
-  background: linear-gradient(to bottom, #e06458 0%, #ef8279 17%, #fa9f97 32%, #fa9f97 45%, #ef8279 59%, #e06458 100%);
+  background: linear-gradient(to bottom, #2838c7 0%, #5979ef 17%, #869ef3 32%, #869ef3 45%, #5979ef 59%, #2838c7 100%);
   animation: loader 3s linear infinite;
 }
 .progress {

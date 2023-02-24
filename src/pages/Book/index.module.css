@@ -24,7 +24,7 @@
 }
 
 .info p {
-  @apply leading-6;
+  @apply leading-7;
 }
 
 .cover {

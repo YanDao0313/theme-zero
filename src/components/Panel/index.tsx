@@ -16,7 +16,7 @@ type PanelProps = {
 }
 
 const Panel: React.FC<PanelProps> = ({ likeSite, likeCount, list, theme, togglePanle, toggleTheme, handleLike }) => {
-  const likeContent = likeSite ? `${likeCount} 位旅行者见证故事的发芽` : `${likeCount} 位旅行者带来故事的种子`
+  const likeContent = likeSite ? `${likeCount} 位旅行者见证种子的发芽` : `${likeCount} 位旅行者带来故事的种子`
 
   return (
     <div className={styles.panel}>

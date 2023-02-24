@@ -26,7 +26,7 @@ const Markdown: React.FC<MarkdownProps> = ({ className, content }) => {
   }, [])
 
   return (
-    <div className="text-justify leading-relaxed">
+    <div className="text-justify leading-7">
       <ReactMarkdown
         className={clsx(className, styles.markdown)}
         children={content}

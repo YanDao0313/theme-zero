@@ -22,6 +22,12 @@
   }
 }
 
+@media (max-width: 640px) {
+  .app::before {
+    background-image: unset;
+  }
+}
+
 /* page fade animation */
 .fade {
   @apply w-full self-start;

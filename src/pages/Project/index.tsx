@@ -35,7 +35,7 @@ const Project: React.FC<ProjectProps> = () => {
           <div>
             {list.map((item) => {
               return (
-                <div key={item.name} className="mb-10 leading-relaxed">
+                <div key={item.name} className="mb-10 leading-7">
                   <a className="link text-xl" href={item.code} target="_blank" rel="noopener noreferrer">
                     {item.name}
                     <External className="inline-block w-5 h-5 transform -translate-y-0.5" />
