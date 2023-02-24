@@ -4,7 +4,7 @@ import { Issue, CustomIssue } from '@/type'
 /**
  * 格式化文章
  */
-const regex = /^(.+)?\r\n\s*(.+)?\r\n/
+const regex = /^(.+)?\r\n\s*(.+)?(\r\n)?/
 const coverRegex = /^\[(.+)\].*(http.*(?:jpg|jpeg|png|gif|webp))/
 export const formatIssue = (issue: Issue): Issue => {
   const { body, created_at } = issue
