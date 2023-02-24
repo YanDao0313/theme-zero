@@ -51,26 +51,18 @@ const list: Theme[] = [
 const randomTheme = list[random(0, list.length)]
 
 const Side: React.FC<SideProps> = () => {
-  const [showPanel, setShowPanel] = useState(false)
-  const [lastUpdateAt, setLastUpdateAt] = useState(Date.now())
   const location = useLocation()
   const pathname = location.pathname
-  const togglePanle = () => setShowPanel((c) => !c)
-
-  // 主题过期时间为1天，到期重置
+  const [showPanel, setShowPanel] = useState(false)
   const [theme, setTheme] = useLocalStorage<ThemeType>('theme', randomTheme.type, 24 * 60 * 60 * 1000)
 
-  const toggleTheme = (theme: ThemeType) => {
-    const now = Date.now()
-    if (now - lastUpdateAt < 1000) return
-    setLastUpdateAt(now)
-    setTheme(theme)
-  }
+  const toggleTheme = (theme: ThemeType) => setTheme(theme)
+  const togglePanle = () => setShowPanel((c) => !c)
 
   useLayoutEffect(() => {
     const t = list.find((e) => e.type === theme)!
     document.documentElement.style.setProperty('--theme-color', t.color)
-    document.documentElement.style.setProperty('--background-color', color(t.color).alpha(0.1).string())
+    document.documentElement.style.setProperty('--background-color', color(t.color).alpha(0.14).string())
     document.documentElement.style.setProperty('--background-image', `url('${t.image}')`)
     document.getElementsByTagName('body')[0].className = theme
   }, [theme])

@@ -22,7 +22,7 @@ const Panel: React.FC<PanelProps> = ({ list, theme, togglePanle, toggleTheme }) 
             <div></div>
           </div>
           <div className={styles.content}>
-            <div className={styles.head}>背景主题</div>
+            <div className={styles.head}>画笔，臣服于我！</div>
             <ul className={styles.body}>
               {list.map((t) => {
                 return (
@@ -34,7 +34,7 @@ const Panel: React.FC<PanelProps> = ({ list, theme, togglePanle, toggleTheme }) 
                     <span
                       style={{
                         borderColor: t.color,
-                        backgroundColor: theme === t.type ? color(t.color).alpha(0.5).string() : 'transparent',
+                        backgroundColor: color(t.color).alpha(0.3).string(),
                       }}
                     >
                       {t.name}
