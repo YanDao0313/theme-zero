@@ -18,18 +18,20 @@ header svg {
   @apply mr-1;
 }
 
-.nav-over {
-  @apply absolute top-20 right-4 p-1 flex flex-col rounded shadow-sm z-10;
-  background-color: white;
-}
+@media (max-width: 640px) {
+  .nav-over {
+    @apply absolute top-20 right-4 p-1 flex flex-col rounded shadow-sm z-10;
+    background-color: white;
+  }
 
-.nav-over a {
-  @apply px-4 py-3;
-  background-color: var(--background-color);
-}
+  .nav-over a {
+    @apply justify-center py-3 w-28 text-center;
+    background-color: var(--background-color);
+  }
 
-.nav-over svg {
-  @apply mr-2;
+  .nav-over svg {
+    @apply mr-2;
+  }
 }
 
 .toggle span {
