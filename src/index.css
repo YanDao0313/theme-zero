@@ -14,6 +14,7 @@
       'Ubuntu', 'Helvetica Neue', sans-serif;
     --font-color: #444;
     scrollbar-gutter: stable;
+    overflow-y: overlay;
   }
 
   * {
@@ -33,7 +34,6 @@
   ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
-    background-color: var(--background-color);
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 3px;

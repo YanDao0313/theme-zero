@@ -16,7 +16,9 @@
 @media (max-width: 1024px) {
   .app {
     padding-left: 0;
-    background-image: unset;
+  }
+  .app::before {
+    background-position: 90% center;
   }
 }
 
