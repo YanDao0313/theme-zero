@@ -1,36 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import clsx from 'clsx'
 import color from 'color'
 import { Theme, ThemeType } from '@/type'
-import { queryLike } from '@utils/service'
-import { useLocalStorage } from '@/utils/hook'
+
 import styles from './index.module.css'
 
 type PanelProps = {
+  likeSite: boolean
+  likeCount: number
   list: Theme[]
   theme: ThemeType
   togglePanle: () => void
   toggleTheme: (theme: ThemeType) => void
+  handleLike: () => void
 }
 
-const Panel: React.FC<PanelProps> = ({ list, theme, togglePanle, toggleTheme }) => {
-  const [likeCount, setLikeCount] = useState(0)
-  const [likeSite, setLikeSite] = useLocalStorage<boolean>('like', false)
-
-  const handleLike = () => {
-    if (likeSite) return
-    queryLike().then((data) => {
-      setLikeCount(data)
-      setLikeSite(true)
-    })
-  }
-
-  useEffect(() => {
-    queryLike('getTimes').then((data) => {
-      setLikeCount(data)
-    })
-  }, [])
-
+const Panel: React.FC<PanelProps> = ({ likeSite, likeCount, list, theme, togglePanle, toggleTheme, handleLike }) => {
   const likeContent = likeSite ? `${likeCount} 位旅行者见证故事的发芽` : `${likeCount} 位旅行者带来故事的种子`
 
   return (

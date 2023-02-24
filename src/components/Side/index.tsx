@@ -1,8 +1,9 @@
-import React, { useState, useLayoutEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import clsx from 'clsx'
 import color from 'color'
 import { random } from '@/utils'
+import { queryLike } from '@utils/service'
 import { useLocalStorage } from '@/utils/hook'
 import ShootingStar from '@components/ShootingStar'
 import Panel from '@components/Panel'
@@ -56,6 +57,21 @@ const Side: React.FC<SideProps> = () => {
   const [showPanel, setShowPanel] = useState(false)
   const [isLoad, setIsLoad] = useState(false)
   const [theme, setTheme] = useLocalStorage<ThemeType>('theme', randomTheme.type, 24 * 60 * 60 * 1000)
+  const [likeSite, setLikeSite] = useLocalStorage<boolean>('like', false)
+  const [likeCount, setLikeCount] = useState(0)
+  const handleLike = () => {
+    if (likeSite) return
+    queryLike().then((data) => {
+      setLikeCount(data)
+      setLikeSite(true)
+    })
+  }
+
+  useEffect(() => {
+    queryLike('getTimes').then((data) => {
+      setLikeCount(data)
+    })
+  }, [])
 
   const toggleTheme = (theme: ThemeType) => setTheme(theme)
   const togglePanle = () => {
@@ -80,7 +96,17 @@ const Side: React.FC<SideProps> = () => {
   return (
     <div className="side fixed top-0 left-0 h-full overflow-hidden hidden lg:flex flex-col justify-between">
       <ShootingStar />
-      {showPanel && <Panel list={list} theme={theme} toggleTheme={toggleTheme} togglePanle={togglePanle} />}
+      {showPanel && (
+        <Panel
+          likeSite={likeSite}
+          likeCount={likeCount}
+          list={list}
+          theme={theme}
+          toggleTheme={toggleTheme}
+          togglePanle={togglePanle}
+          handleLike={handleLike}
+        />
+      )}
 
       {/* side menu */}
       <div className="w-full h-1/2 flex justify-end z-10">
