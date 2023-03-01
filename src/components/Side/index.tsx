@@ -109,7 +109,7 @@ const Side: React.FC<SideProps> = () => {
       )}
 
       {/* side menu */}
-      <div className="w-full h-1/2 flex justify-end z-10">
+      <div className="w-full h-3/5 flex justify-end z-10">
         <nav className="nav nav-y flex flex-col justify-end items-center w-12">
           <Link className={clsx(pathname === '/' && 'active')} to="/" data-name="首页">
             <Home />
